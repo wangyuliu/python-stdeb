@@ -1,0 +1,1904 @@
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_4/.mount
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing kvm build in /var/cache/obs/worker/root_4/root
+[    0s] 
+[    0s] 
+[    0s] i04-ch1c started "build python-stdeb.spec" at Sat Mar 30 09:55:34 UTC 2024.
+[    0s] 
+[    0s] Building python-stdeb for project 'openSUSE:Factory:RISCV' repository 'standard' arch 'riscv64' srcmd5 'a77f40048e91c9bd0d289b6630e4ba0e'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_4/.build-srcdir/python-stdeb.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_4/.build-srcdir/python-stdeb.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/4/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_4/.build.rpmlist /var/cache/obs/worker/root_4/.build-srcdir/python-stdeb.spec build ...
+[    1s] unpacking preinstall image openSUSE:Factory:RISCV/standard/preinstallimage-python [6901ca4c485e5cee2b9b28d2ee36cceb]
+[    2s] 
+[    2s] copying packages...
+[    3s] reordering...cycle: dh-autoreconf -> debhelper
+[    3s]   breaking dependency dh-autoreconf -> debhelper
+[    3s] done
+[    3s] Detected virtio-serial support
+[    4s] booting kvm...
+[    4s] ### VM INTERACTION START ###
+[    4s] Using virtio-serial support and enabling console input
+[    4s] /usr/bin/qemu-kvm -nodefaults -no-reboot -nographic -vga none -cpu host -M pc,accel=kvm,usb=off,dump-guest-core=off,vmport=off -sandbox on -bios /usr/share/qemu/qboot.rom -object rng-random,filename=/dev/random,id=rng0 -device virtio-rng-pci,rng=rng0 -object iothread,id=io0 -runas qemu -net none -kernel /var/cache/obs/worker/root_4/.mount/boot/kernel -initrd /var/cache/obs/worker/root_4/.mount/boot/initrd -append root=/dev/disk/by-id/virtio-0 rootfstype=ext4 rootflags=noatime kvmclock mitigations=off elevator=noop nmi_watchdog=0 rw rd.driver.pre=binfmt_misc oops=panic panic=1 quiet console=hvc0 init=/.build/initvm.x86_64 -m 16384 -drive file=/var/cache/obs/worker/root_4/root,format=raw,if=none,id=disk,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=disk,serial=0 -drive file=/var/cache/obs/worker/root_4/swap,format=raw,if=none,id=swap,cache=unsafe,aio=io_uring -device virtio-blk-pci,iothread=io0,drive=swap,serial=1 -device virtio-serial,max_ports=2 -device virtconsole,chardev=virtiocon0 -chardev stdio,mux=on,id=virtiocon0 -mon chardev=virtiocon0 -chardev socket,id=monitor,server=on,wait=off,path=/var/cache/obs/worker/root_4/root.qemu/monitor -mon chardev=monitor,mode=readline -smp 4
+[    5s] [    0.450415][    T1] systemd[1]: Failed to start Virtual Console Setup.
+[    5s] [[0;1;31mFAILED[0m] Failed to start [0;1;39mVirtual Console Setup[0m.
+[    5s] [    0.614933] dracut-pre-udev[310]: sh: line 1: /usr/lib/module-init-tools/unblacklist: No such file or directory
+[    6s] [[0;1;31mFAILED[0m] Failed to start [0;1;39mVirtual Console Setup[0m.
+[    6s] ### VM INTERACTION END ###
+[    6s] 2nd stage started in virtual machine
+[    6s] machine type: riscv64
+[    7s] Linux version: 6.8.1-1-default #1 SMP PREEMPT_DYNAMIC Tue Mar 19 07:32:20 UTC 2024 (d922afa)
+[    7s] Time: Sat Mar 30 09:55:40 UTC 2024
+[    7s] Increasing log level from now on...
+[    7s] [    2.133821][  T412] sysrq: Changing Loglevel
+[    7s] [    2.133903][  T412] sysrq: Loglevel set to 4
+[    7s] Enable sysrq operations
+[    7s] Setting up swapspace version 1, size = 4 GiB (4294963200 bytes)
+[    7s] no label, UUID=83639675-df9a-41be-b99c-1f9fd7fd2537
+[    7s] swapon: /dev/vdb: found signature [pagesize=4096, signature=swap]
+[    7s] swapon: /dev/vdb: pagesize=4096, swapsize=4294967296, devsize=4294967296
+[    7s] swapon /dev/vdb
+[    7s] WARNING: udev not running, creating extra device nodes
+[    7s] logging output to //.build.log...
+[    7s] processing recipe /.build-srcdir/python-stdeb.spec ...
+[    7s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/python-stdeb.spec build ...
+[    7s] initializing rpm db...
+[    8s] querying package ids...
+[   18s] [1/192] preinstalled aaa_base-84.87+git20240202.9526d46-2.1
+[   18s] [2/192] preinstalled aaa_base-malloccheck-84.87+git20240202.9526d46-2.1
+[   18s] [3/192] preinstalled attr-2.5.2-1.1
+[   18s] [4/192] preinstalled bash-5.2.26-11.1
+[   18s] [5/192] preinstalled bash-sh-5.2.26-11.1
+[   18s] [6/192] preinstalled binutils-2.42-2.2
+[   18s] [7/192] preinstalled brp-check-suse-84.87+git20230324.8680ce4-1.1
+[   18s] [8/192] preinstalled build-compare-20230617T171717.50241a8-1.1
+[   18s] [9/192] preinstalled build-mkbaselibs-20240313-1.1
+[   18s] [10/192] preinstalled bzip2-1.0.8-5.3
+[   18s] [11/192] preinstalled chkstat-1699_20240307-1.1
+[   18s] [12/192] preinstalled compat-usrmerge-build-84.87-5.5
+[   18s] [13/192] preinstalled compat-usrmerge-tools-84.87-5.5
+[   18s] [14/192] preinstalled coreutils-9.4-5.2
+[   18s] [15/192] preinstalled cpio-2.15-2.1
+[   18s] [16/192] preinstalled cpp-13-2.2
+[   18s] [17/192] preinstalled cpp13-13.2.1+git8285-3.2
+[   18s] [18/192] preinstalled crypto-policies-20230920.570ea89-3.2
+[   18s] [19/192] preinstalled debugedit-5.0-5.4
+[   18s] [20/192] preinstalled diffutils-3.10-1.3
+[   18s] [21/192] preinstalled dwz-0.15-3.1
+[   18s] [22/192] preinstalled elfutils-0.191-1.2
+[   18s] [23/192] cumulate fakeroot-1.29-2.2
+[   18s] [24/192] cumulate fdupes-2.3.0-1.1
+[   18s] [25/192] preinstalled file-5.45-2.2
+[   18s] [26/192] preinstalled file-magic-5.45-2.2
+[   18s] [27/192] preinstalled filesystem-84.87-15.1
+[   18s] [28/192] preinstalled fillup-1.42-281.1
+[   18s] [29/192] preinstalled findutils-4.9.0-4.1
+[   18s] [30/192] preinstalled gawk-5.3.0-1.3
+[   18s] [31/192] preinstalled gcc-13-2.2
+[   18s] [32/192] preinstalled gcc-PIE-13-2.2
+[   18s] [33/192] preinstalled gcc13-13.2.1+git8285-3.2
+[   18s] [34/192] preinstalled gcc13-PIE-13.2.1+git8285-3.2
+[   18s] [35/192] preinstalled gettext-runtime-mini-0.22.5-1.1
+[   18s] [36/192] preinstalled gettext-tools-mini-0.22.5-1.1
+[   18s] [37/192] preinstalled glibc-2.39-4.2
+[   18s] [38/192] preinstalled glibc-devel-2.39-4.2
+[   18s] [39/192] preinstalled glibc-locale-base-2.39-4.2
+[   18s] [40/192] preinstalled grep-3.11-2.1
+[   18s] [41/192] preinstalled gzip-1.13-3.1
+[   18s] [42/192] preinstalled kernel-obs-build-6.8.1-1.2
+[   18s] [43/192] preinstalled libacl1-2.3.2-1.1
+[   18s] [44/192] preinstalled libasan8-14.0.1+git9355-1.2
+[   18s] [45/192] preinstalled libasm1-0.191-1.2
+[   18s] [46/192] preinstalled libatomic1-14.0.1+git9355-1.2
+[   18s] [47/192] preinstalled libattr1-2.5.2-1.1
+[   18s] [48/192] preinstalled libaudit1-3.1.1-1.3
+[   18s] [49/192] preinstalled libblkid1-2.39.3-4.2
+[   18s] [50/192] preinstalled libbz2-1-1.0.8-5.3
+[   18s] [51/192] preinstalled libcap-ng0-0.8.4-1.3
+[   18s] [52/192] preinstalled libcap2-2.69-1.3
+[   18s] [53/192] preinstalled libcrypt1-4.4.36-1.3
+[   18s] [54/192] preinstalled libctf-nobfd0-2.42-2.2
+[   18s] [55/192] preinstalled libctf0-2.42-2.2
+[   18s] [56/192] preinstalled libdb-4_8-4.8.30-43.2
+[   18s] [57/192] preinstalled libdw1-0.191-1.2
+[   18s] [58/192] preinstalled libeconf0-0.6.2-1.1
+[   18s] [59/192] preinstalled libelf1-0.191-1.2
+[   18s] [60/192] preinstalled libexpat1-2.6.2-1.1
+[   18s] [61/192] preinstalled libfdisk1-2.39.3-4.2
+[   18s] [62/192] preinstalled libffi8-3.4.6-1.1
+[   18s] [63/192] preinstalled libgcc_s1-14.0.1+git9355-1.2
+[   18s] [64/192] preinstalled libgcrypt20-1.10.3-3.3
+[   18s] [65/192] preinstalled libgdbm6-1.23-3.3
+[   18s] [66/192] preinstalled libgdbm_compat4-1.23-3.3
+[   18s] [67/192] preinstalled libgmp10-6.3.0-3.1
+[   18s] [68/192] preinstalled libgomp1-14.0.1+git9355-1.2
+[   18s] [69/192] preinstalled libgpg-error0-1.48-1.1
+[   18s] [70/192] preinstalled libisl23-0.26-1.3
+[   18s] [71/192] preinstalled libitm1-14.0.1+git9355-1.2
+[   18s] [72/192] preinstalled liblua5_4-5-5.4.6-3.3
+[   18s] [73/192] preinstalled liblzma5-5.6.1.revertto5.4-2.1
+[   18s] [74/192] preinstalled libmagic1-5.45-2.2
+[   18s] [75/192] preinstalled libmount1-2.39.3-4.2
+[   18s] [76/192] preinstalled libmpc3-1.3.1-1.5
+[   18s] [77/192] preinstalled libmpdec3-2.5.1-2.4
+[   18s] [78/192] preinstalled libmpfr6-4.2.1-1.3
+[   18s] [79/192] preinstalled libncurses6-6.4.20240323-33.1
+[   18s] [80/192] preinstalled libopenssl3-3.1.4-5.1
+[   18s] [81/192] cumulate libp11-kit0-0.25.3-1.1
+[   18s] [82/192] preinstalled libpcre2-8-0-10.43-1.1
+[   18s] [83/192] preinstalled libpkgconf4-2.1.1-1.2
+[   18s] [84/192] preinstalled libpopt0-1.19-1.4
+[   18s] [85/192] preinstalled libpython3_10-1_0-3.10.14-1.2
+[   18s] [86/192] preinstalled libpython3_11-1_0-3.11.8-5.2
+[   18s] [87/192] preinstalled libpython3_12-1_0-3.12.2-5.1
+[   18s] [88/192] preinstalled libreadline8-8.2.10-1.3
+[   18s] [89/192] preinstalled librpmbuild10-4.19.1.1-3.2
+[   18s] [90/192] preinstalled libseccomp2-2.5.5-1.3
+[   18s] [91/192] preinstalled libselinux1-3.6-1.3
+[   18s] [92/192] preinstalled libsmartcols1-2.39.3-4.2
+[   18s] [93/192] cumulate libsqlite3-0-3.45.2-1.1
+[   18s] [94/192] preinstalled libstdc++6-14.0.1+git9355-1.2
+[   18s] [95/192] cumulate libtasn1-6-4.19.0-1.2
+[   18s] [96/192] preinstalled libubsan1-14.0.1+git9355-1.2
+[   18s] [97/192] preinstalled libuuid1-2.39.3-4.2
+[   18s] [98/192] preinstalled libxcrypt-devel-4.4.36-1.3
+[   18s] [99/192] preinstalled libz1-1.3.1-1.1
+[   18s] [100/192] preinstalled libzstd1-1.5.5-6.1
+[   18s] [101/192] preinstalled linux-glibc-devel-6.8-1.2
+[   18s] [102/192] preinstalled lua54-5.4.6-3.3
+[   18s] [103/192] preinstalled make-4.4.1-3.1
+[   18s] [104/192] preinstalled ncurses-utils-6.4.20240323-33.1
+[   18s] [105/192] preinstalled pam-1.6.0-4.1
+[   18s] [106/192] preinstalled patch-2.7.6-7.1
+[   18s] [107/192] preinstalled perl-5.38.2-2.2
+[   18s] [108/192] cumulate perl-Archive-Zip-1.68-1.10
+[   18s] [109/192] cumulate perl-TimeDate-2.33-1.9
+[   18s] [110/192] cumulate perl-Try-Tiny-0.31-1.6
+[   18s] [111/192] preinstalled perl-base-5.38.2-2.2
+[   18s] [112/192] preinstalled permissions-1699_20240307-1.1
+[   18s] [113/192] preinstalled permissions-config-1699_20240307-1.1
+[   18s] [114/192] preinstalled pkgconf-2.1.1-1.2
+[   18s] [115/192] preinstalled pkgconf-m4-2.1.1-1.2
+[   18s] [116/192] preinstalled pkgconf-pkg-config-2.1.1-1.2
+[   18s] [117/192] preinstalled polkit-default-privs-1550+20240325.eddbe04-1.1
+[   18s] [118/192] preinstalled post-build-checks-84.87+git20240327.7996a0f-1.1
+[   18s] [119/192] preinstalled python-rpm-macros-20240202.501440e-1.2
+[   18s] [120/192] preinstalled python-rpm-packaging-20210526+a18ca48-1.5
+[   18s] [121/192] cumulate python310-apipkg-3.0.2-1.3
+[   18s] [122/192] preinstalled python310-base-3.10.14-1.2
+[   18s] [123/192] cumulate python310-charset-normalizer-3.3.2-1.3
+[   18s] [124/192] cumulate python310-idna-3.6-1.3
+[   18s] [125/192] cumulate python310-iniconfig-2.0.0-4.3
+[   18s] [126/192] cumulate python310-pycparser-2.21-2.4
+[   18s] [127/192] preinstalled python310-setuptools-69.0.3-1.2
+[   18s] [128/192] cumulate python311-apipkg-3.0.2-1.3
+[   18s] [129/192] preinstalled python311-base-3.11.8-5.2
+[   18s] [130/192] cumulate python311-charset-normalizer-3.3.2-1.3
+[   18s] [131/192] cumulate python311-idna-3.6-1.3
+[   18s] [132/192] cumulate python311-iniconfig-2.0.0-4.3
+[   18s] [133/192] preinstalled python311-packaging-24.0-1.1
+[   18s] [134/192] cumulate python311-pycparser-2.21-2.4
+[   18s] [135/192] preinstalled python311-setuptools-69.0.3-1.2
+[   18s] [136/192] cumulate python312-apipkg-3.0.2-1.3
+[   18s] [137/192] preinstalled python312-base-3.12.2-5.1
+[   18s] [138/192] cumulate python312-charset-normalizer-3.3.2-1.3
+[   18s] [139/192] cumulate python312-idna-3.6-1.3
+[   18s] [140/192] cumulate python312-iniconfig-2.0.0-4.3
+[   18s] [141/192] cumulate python312-pycparser-2.21-2.4
+[   18s] [142/192] preinstalled python312-setuptools-69.0.3-1.2
+[   18s] [143/192] preinstalled qemu-linux-user-8.2.2-68.1
+[   18s] [144/192] preinstalled rpm-4.19.1.1-3.2
+[   18s] [145/192] preinstalled rpm-build-4.19.1.1-3.2
+[   18s] [146/192] preinstalled rpm-build-perl-4.19.1.1-3.2
+[   18s] [147/192] preinstalled rpm-config-SUSE-20240214-1.1
+[   18s] [148/192] preinstalled rpmlint-mini-2.5.0+git20240325.982d664-15.43
+[   18s] [149/192] preinstalled rpmlint-strict-2.5.0+git20240325.982d664-1.1
+[   18s] [150/192] preinstalled sed-4.9-2.2
+[   18s] [151/192] preinstalled system-user-root-20190513-2.4
+[   18s] [152/192] preinstalled systemd-rpm-macros-24-1.3
+[   18s] [153/192] preinstalled tar-1.35-2.1
+[   18s] [154/192] preinstalled terminfo-base-6.4.20240323-33.1
+[   18s] [155/192] preinstalled update-alternatives-1.22.5-1.2
+[   18s] [156/192] preinstalled util-linux-2.39.3-4.2
+[   18s] [157/192] preinstalled which-2.21-5.4
+[   18s] [158/192] preinstalled xz-5.6.1.revertto5.4-2.1
+[   18s] [159/192] cumulate dpkg-1.22.5-1.1
+[   18s] [160/192] cumulate perl-Test-Fatal-0.017-1.4
+[   18s] [161/192] cumulate python310-3.10.14-1.1
+[   18s] [162/192] cumulate python310-cffi-1.16.0-2.2
+[   18s] [163/192] cumulate python311-3.11.8-5.1
+[   18s] [164/192] cumulate python311-cffi-1.16.0-2.2
+[   18s] [165/192] cumulate python312-3.12.2-5.1
+[   18s] [166/192] cumulate python312-cffi-1.16.0-2.2
+[   18s] [167/192] cumulate p11-kit-0.25.3-1.1
+[   18s] [168/192] cumulate p11-kit-tools-0.25.3-1.1
+[   18s] [169/192] cumulate python310-py-1.11.0-6.3
+[   18s] [170/192] cumulate python311-py-1.11.0-6.3
+[   18s] [171/192] cumulate python312-py-1.11.0-6.3
+[   18s] [172/192] cumulate perl-Sub-Override-0.100.0-2.1
+[   18s] [173/192] cumulate python310-pyOpenSSL-24.1.0-1.2
+[   18s] [174/192] cumulate python311-pyOpenSSL-24.1.0-1.2
+[   18s] [175/192] cumulate python312-pyOpenSSL-24.1.0-1.2
+[   18s] [176/192] cumulate ca-certificates-2+git20230406.2dae8b7-1.1
+[   18s] [177/192] cumulate python310-cryptography-42.0.4-1.2
+[   18s] [178/192] cumulate python311-cryptography-42.0.4-1.2
+[   18s] [179/192] cumulate python312-cryptography-42.0.4-1.2
+[   18s] [180/192] cumulate ca-certificates-mozilla-2.66-1.1
+[   18s] [181/192] cumulate strip-nondeterminism-1.13.1-1.3
+[   18s] [182/192] cumulate python310-certifi-2023.11.17-1.3
+[   18s] [183/192] cumulate python311-certifi-2023.11.17-1.3
+[   18s] [184/192] cumulate python312-certifi-2023.11.17-1.3
+[   18s] [185/192] cumulate python310-urllib3-2.1.0-2.3
+[   18s] [186/192] cumulate python311-urllib3-2.1.0-2.3
+[   18s] [187/192] cumulate python312-urllib3-2.1.0-2.3
+[   18s] [188/192] cumulate python310-requests-2.31.0-2.3
+[   18s] [189/192] cumulate python311-requests-2.31.0-2.3
+[   18s] [190/192] cumulate python312-requests-2.31.0-2.3
+[   18s] [191/192] cumulate dh-autoreconf-19-3.8
+[   18s] [192/192] cumulate debhelper-13.13-2.1
+[   18s] now installing cumulated packages
+[   19s] Preparing...                          ########################################
+[   19s] Updating / installing...
+[   19s] libsqlite3-0-3.45.2-1.1               ########################################
+[   19s] python310-3.10.14-1.1                 ########################################
+[   19s] python311-3.11.8-5.1                  ########################################
+[   19s] python312-3.12.2-5.1                  ########################################
+[   19s] python312-idna-3.6-1.3                ########################################
+[   19s] python311-idna-3.6-1.3                ########################################
+[   19s] python310-idna-3.6-1.3                ########################################
+[   19s] libtasn1-6-4.19.0-1.2                 ########################################
+[   19s] libp11-kit0-0.25.3-1.1                ########################################
+[   19s] p11-kit-0.25.3-1.1                    ########################################
+[   19s] p11-kit-tools-0.25.3-1.1              ########################################
+[   19s] ca-certificates-2+git20230406.2dae8b7-########################################
+[   20s] ca-certificates-mozilla-2.66-1.1      ########################################
+[   23s] python310-certifi-2023.11.17-1.3      ########################################
+[   23s] python311-certifi-2023.11.17-1.3      ########################################
+[   23s] python312-certifi-2023.11.17-1.3      ########################################
+[   23s] python312-pycparser-2.21-2.4          ########################################
+[   23s] python312-cffi-1.16.0-2.2             ########################################
+[   23s] python312-cryptography-42.0.4-1.2     ########################################
+[   23s] python312-pyOpenSSL-24.1.0-1.2        ########################################
+[   23s] python312-urllib3-2.1.0-2.3           ########################################
+[   23s] python312-iniconfig-2.0.0-4.3         ########################################
+[   24s] python312-charset-normalizer-3.3.2-1.3########################################
+[   24s] python312-apipkg-3.0.2-1.3            ########################################
+[   24s] python312-py-1.11.0-6.3               ########################################
+[   24s] python311-pycparser-2.21-2.4          ########################################
+[   24s] python311-cffi-1.16.0-2.2             ########################################
+[   24s] python311-cryptography-42.0.4-1.2     ########################################
+[   24s] python311-pyOpenSSL-24.1.0-1.2        ########################################
+[   24s] python311-urllib3-2.1.0-2.3           ########################################
+[   24s] python311-iniconfig-2.0.0-4.3         ########################################
+[   24s] python311-charset-normalizer-3.3.2-1.3########################################
+[   25s] python311-apipkg-3.0.2-1.3            ########################################
+[   25s] python311-py-1.11.0-6.3               ########################################
+[   25s] python310-pycparser-2.21-2.4          ########################################
+[   25s] python310-cffi-1.16.0-2.2             ########################################
+[   25s] python310-cryptography-42.0.4-1.2     ########################################
+[   25s] python310-pyOpenSSL-24.1.0-1.2        ########################################
+[   25s] python310-urllib3-2.1.0-2.3           ########################################
+[   25s] python310-iniconfig-2.0.0-4.3         ########################################
+[   25s] python310-charset-normalizer-3.3.2-1.3########################################
+[   25s] python310-apipkg-3.0.2-1.3            ########################################
+[   25s] python310-py-1.11.0-6.3               ########################################
+[   25s] perl-Try-Tiny-0.31-1.6                ########################################
+[   25s] perl-Test-Fatal-0.017-1.4             ########################################
+[   25s] perl-Sub-Override-0.100.0-2.1         ########################################
+[   25s] perl-TimeDate-2.33-1.9                ########################################
+[   26s] dpkg-1.22.5-1.1                       ########################################
+[   26s] perl-Archive-Zip-1.68-1.10            ########################################
+[   26s] strip-nondeterminism-1.13.1-1.3       ########################################
+[   26s] dh-autoreconf-19-3.8                  ########################################
+[   26s] debhelper-13.13-2.1                   ########################################
+[   26s] python310-requests-2.31.0-2.3         ########################################
+[   26s] python311-requests-2.31.0-2.3         ########################################
+[   26s] python312-requests-2.31.0-2.3         ########################################
+[   26s] fdupes-2.3.0-1.1                      ########################################
+[   26s] fakeroot-1.29-2.2                     ########################################
+[   26s] update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode
+[   30s] now finalizing build dir...
+[   30s] ... running 01-add_abuild_user_to_trusted_group
+[   30s] ... running 02-set_timezone_to_utc
+[   30s] ... running 03-set-permissions-secure
+[   30s] ... running 11-hack_uname_version_to_kernel_version
+[   32s] setting SOURCE_DATE_EPOCH_MTIME to 1650768604
+[   34s] -----------------------------------------------------------------
+[   34s] I have the following modifications for python-stdeb.spec:
+[   34s] 22c22
+[   34s] < Release:        0
+[   34s] ---
+[   34s] > Release:        1.6
+[   37s] build target is riscv64-suse-linux
+[   37s] -----------------------------------------------------------------
+[   37s] ----- building python-stdeb.spec (user abuild)
+[   37s] -----------------------------------------------------------------
+[   37s] -----------------------------------------------------------------
+[   40s] setting SOURCE_DATE_EPOCH_MTIME to 1650768604
+[   40s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --target=riscv64-suse-linux --define '_build_create_debug 1' --define 'disturl obs://build.opensuse.org/openSUSE:Factory:RISCV/standard/a77f40048e91c9bd0d289b6630e4ba0e-python-stdeb' /home/abuild/rpmbuild/SOURCES/python-stdeb.spec
+[   68s] Building target platforms: riscv64-suse-linux
+[   68s] Building for target riscv64-suse-linux
+[   68s] using SOURCE_DATE_EPOCH with value 1650768598 as build time
+[   68s] Executing(%prep): /usr/bin/bash -e /var/tmp/rpm-tmp.I4Jy04
+[   68s] + umask 022
+[   68s] + cd /home/abuild/rpmbuild/BUILD
+[   68s] + cd /home/abuild/rpmbuild/BUILD
+[   68s] + rm -rf stdeb-0.10.0
+[   68s] + /usr/lib/rpm/rpmuncompress -x /home/abuild/rpmbuild/SOURCES/stdeb-0.10.0.tar.gz
+[   68s] + STATUS=0
+[   68s] + '[' 0 -ne 0 ']'
+[   68s] + cd stdeb-0.10.0
+[   68s] + rm -rf /home/abuild/rpmbuild/BUILD/stdeb-0.10.0-SPECPARTS
+[   68s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILD/stdeb-0.10.0-SPECPARTS
+[   68s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[   68s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/tests-use-tablib.patch
+[   68s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[   68s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/remove-version-checks.patch
+[   68s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[   68s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/ignore-unmet-deps.patch
+[   68s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[   69s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/remove-python-helper-rules.patch
+[   69s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[   69s] + /usr/lib/rpm/rpmuncompress /home/abuild/rpmbuild/SOURCES/no-install-layout.patch
+[   69s] + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
+[   69s] + cp /home/abuild/rpmbuild/SOURCES/tablib-0.13.0.tar.gz .
+[   69s] + RPM_EC=0
+[   69s] ++ jobs -p
+[   69s] + exit 0
+[   69s] Executing(%build): /usr/bin/bash -e /var/tmp/rpm-tmp.g3kBCN
+[   69s] + umask 022
+[   69s] + cd /home/abuild/rpmbuild/BUILD
+[   69s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64
+[   69s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64
+[   69s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   69s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64
+[   69s] + cd stdeb-0.10.0
+[   69s] + ref=/usr/lib/rpm
+[   69s] + mints=0
+[   69s] + case $(uname -m) in
+[   69s] ++ uname -m
+[   69s] + mints=20160911
+[   69s] + for s in guess sub
+[   69s] ++ find -maxdepth 8 -name config.guess
+[   69s] + for s in guess sub
+[   69s] ++ find -maxdepth 8 -name config.sub
+[   69s] ++ '[' -f _current_flavor ']'
+[   69s] ++ true
+[   69s] + last_flavor=
+[   69s] + '[' -z '' ']'
+[   69s] + last_flavor=tmp
+[   69s] + '[' tmp '!=' python310 ']'
+[   69s] + '[' -d build ']'
+[   69s] + '[' -d _build.python310 ']'
+[   69s] + echo python310
+[   69s] + python_flavor=python310
+[   69s] + /usr/bin/python3.10 setup.py build '--executable=/usr/bin/python3.10 -s'
+[   71s] ++ '[' -f _current_flavor ']'
+[   71s] ++ cat _current_flavor
+[   71s] + last_flavor=python310
+[   71s] + '[' -z python310 ']'
+[   71s] + '[' python310 '!=' python312 ']'
+[   71s] + '[' -d build ']'
+[   71s] + mv build _build.python310
+[   71s] + '[' -d _build.python312 ']'
+[   71s] + echo python312
+[   71s] + python_flavor=python312
+[   71s] + /usr/bin/python3.12 setup.py build '--executable=/usr/bin/python3.12 -s'
+[   72s] ++ '[' -f _current_flavor ']'
+[   72s] ++ cat _current_flavor
+[   72s] + last_flavor=python312
+[   72s] + '[' -z python312 ']'
+[   72s] + '[' python312 '!=' python311 ']'
+[   72s] + '[' -d build ']'
+[   72s] + mv build _build.python312
+[   72s] + '[' -d _build.python311 ']'
+[   72s] + echo python311
+[   72s] + python_flavor=python311
+[   72s] + /usr/bin/python3.11 setup.py build '--executable=/usr/bin/python3.11 -s'
+[   73s] + RPM_EC=0
+[   73s] ++ jobs -p
+[   73s] + exit 0
+[   73s] Executing(%install): /usr/bin/bash -e /var/tmp/rpm-tmp.q3FFyE
+[   73s] + umask 022
+[   73s] + cd /home/abuild/rpmbuild/BUILD
+[   73s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64
+[   73s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[   73s] + /usr/bin/mkdir /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64
+[   73s] + cd stdeb-0.10.0
+[   73s] ++ '[' -f _current_flavor ']'
+[   73s] ++ cat _current_flavor
+[   73s] + last_flavor=python311
+[   73s] + '[' -z python311 ']'
+[   73s] + '[' python311 '!=' python310 ']'
+[   73s] + '[' -d build ']'
+[   73s] + mv build _build.python311
+[   73s] + '[' -d _build.python310 ']'
+[   73s] + mv _build.python310 build
+[   73s] + echo python310
+[   73s] + python_flavor=python310
+[   73s] + myargs=
+[   73s] + /usr/bin/python3.10 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64 --prefix /usr
+[   74s] /usr/lib/python3.10/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[   74s] !!
+[   74s] 
+[   74s]         ********************************************************************************
+[   74s]         Please avoid running ``setup.py`` directly.
+[   74s]         Instead, use pypa/build, pypa/installer or other
+[   74s]         standards-based tools.
+[   74s] 
+[   74s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[   74s]         ********************************************************************************
+[   74s] 
+[   74s] !!
+[   74s]   self.initialize_options()
+[   76s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.10/site-packages /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib64/python3.10/site-packages
+[   76s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.10/site-packages ']'
+[   76s] + find /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.10/site-packages -iname '*.pyc' -delete
+[   76s] + find /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.10/site-packages -iname '*.py' -print0
+[   76s] + xargs -0 /usr/bin/python3.10 -c ' 
+[   76s] import sys, py_compile 
+[   76s] for f in sys.argv[1:]: 
+[   76s]   fp=f[len("/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64"):] 
+[   76s]   print("Generating cached byte-code for " + str(fp)) 
+[   76s]   if sys.version[0] == "2": 
+[   76s]     py_compile.compile(f, dfile=fp) 
+[   76s]   else: 
+[   76s]     for o in [0, 1]: 
+[   76s]       py_compile.compile(f, dfile=fp, optimize=o) 
+[   76s] '
+[   77s] Generating cached byte-code for /usr/lib/python3.10/site-packages/stdeb/__init__.py
+[   77s] Generating cached byte-code for /usr/lib/python3.10/site-packages/stdeb/cli_runner.py
+[   77s] Generating cached byte-code for /usr/lib/python3.10/site-packages/stdeb/downloader.py
+[   77s] Generating cached byte-code for /usr/lib/python3.10/site-packages/stdeb/transport.py
+[   77s] Generating cached byte-code for /usr/lib/python3.10/site-packages/stdeb/util.py
+[   77s] Generating cached byte-code for /usr/lib/python3.10/site-packages/stdeb/command/__init__.py
+[   77s] Generating cached byte-code for /usr/lib/python3.10/site-packages/stdeb/command/bdist_deb.py
+[   77s] Generating cached byte-code for /usr/lib/python3.10/site-packages/stdeb/command/common.py
+[   77s] Generating cached byte-code for /usr/lib/python3.10/site-packages/stdeb/command/debianize.py
+[   77s] Generating cached byte-code for /usr/lib/python3.10/site-packages/stdeb/command/install_deb.py
+[   77s] Generating cached byte-code for /usr/lib/python3.10/site-packages/stdeb/command/sdist_dsc.py
+[   77s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.10/site-packages /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib64/python3.10/site-packages
+[   77s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib64/python3.10/site-packages ']'
+[   77s] + myargs='/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/* /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/sbin/*'
+[   77s] + for f in ${myargs}
+[   77s] + '[' -f /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc ']'
+[   77s] ++ realpath /usr/bin/python3.10
+[   77s] + sed -i '1s@#\!.*python.*@#\!/usr/bin/python3.10@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc
+[   77s] + for f in ${myargs}
+[   77s] + '[' -f /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb ']'
+[   77s] ++ realpath /usr/bin/python3.10
+[   77s] + sed -i '1s@#\!.*python.*@#\!/usr/bin/python3.10@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb
+[   77s] + for f in ${myargs}
+[   77s] + '[' -f /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-download ']'
+[   77s] ++ realpath /usr/bin/python3.10
+[   77s] + sed -i '1s@#\!.*python.*@#\!/usr/bin/python3.10@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-download
+[   77s] + for f in ${myargs}
+[   77s] + '[' -f /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-install ']'
+[   77s] ++ realpath /usr/bin/python3.10
+[   77s] + sed -i '1s@#\!.*python.*@#\!/usr/bin/python3.10@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-install
+[   77s] + for f in ${myargs}
+[   77s] + '[' -f '/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/sbin/*' ']'
+[   77s] ++ '[' -f _current_flavor ']'
+[   77s] ++ cat _current_flavor
+[   77s] + last_flavor=python310
+[   77s] + '[' -z python310 ']'
+[   77s] + '[' python310 '!=' python312 ']'
+[   77s] + '[' -d build ']'
+[   77s] + mv build _build.python310
+[   77s] + '[' -d _build.python312 ']'
+[   77s] + mv _build.python312 build
+[   77s] + echo python312
+[   77s] + python_flavor=python312
+[   77s] + myargs=
+[   77s] + /usr/bin/python3.12 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64 --prefix /usr
+[   78s] /usr/lib/python3.12/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[   78s] !!
+[   78s] 
+[   78s]         ********************************************************************************
+[   78s]         Please avoid running ``setup.py`` directly.
+[   78s]         Instead, use pypa/build, pypa/installer or other
+[   78s]         standards-based tools.
+[   78s] 
+[   78s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[   78s]         ********************************************************************************
+[   78s] 
+[   78s] !!
+[   78s]   self.initialize_options()
+[   80s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.12/site-packages /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib64/python3.12/site-packages
+[   80s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.12/site-packages ']'
+[   80s] + find /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.12/site-packages -iname '*.pyc' -delete
+[   80s] + find /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.12/site-packages -iname '*.py' -print0
+[   80s] + xargs -0 /usr/bin/python3.12 -c ' 
+[   80s] import sys, py_compile 
+[   80s] for f in sys.argv[1:]: 
+[   80s]   fp=f[len("/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64"):] 
+[   80s]   print("Generating cached byte-code for " + str(fp)) 
+[   80s]   if sys.version[0] == "2": 
+[   80s]     py_compile.compile(f, dfile=fp) 
+[   80s]   else: 
+[   80s]     for o in [0, 1]: 
+[   80s]       py_compile.compile(f, dfile=fp, optimize=o) 
+[   80s] '
+[   81s] Generating cached byte-code for /usr/lib/python3.12/site-packages/stdeb/__init__.py
+[   81s] Generating cached byte-code for /usr/lib/python3.12/site-packages/stdeb/cli_runner.py
+[   81s] Generating cached byte-code for /usr/lib/python3.12/site-packages/stdeb/downloader.py
+[   81s] Generating cached byte-code for /usr/lib/python3.12/site-packages/stdeb/transport.py
+[   81s] Generating cached byte-code for /usr/lib/python3.12/site-packages/stdeb/util.py
+[   81s] Generating cached byte-code for /usr/lib/python3.12/site-packages/stdeb/command/__init__.py
+[   81s] Generating cached byte-code for /usr/lib/python3.12/site-packages/stdeb/command/bdist_deb.py
+[   81s] Generating cached byte-code for /usr/lib/python3.12/site-packages/stdeb/command/common.py
+[   81s] Generating cached byte-code for /usr/lib/python3.12/site-packages/stdeb/command/debianize.py
+[   81s] Generating cached byte-code for /usr/lib/python3.12/site-packages/stdeb/command/install_deb.py
+[   81s] Generating cached byte-code for /usr/lib/python3.12/site-packages/stdeb/command/sdist_dsc.py
+[   81s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.12/site-packages /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib64/python3.12/site-packages
+[   81s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib64/python3.12/site-packages ']'
+[   81s] + myargs='/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/* /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/sbin/*'
+[   81s] + for f in ${myargs}
+[   81s] + '[' -f /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc ']'
+[   81s] ++ realpath /usr/bin/python3.12
+[   81s] + sed -i '1s@#\!.*python.*@#\!/usr/bin/python3.12@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc
+[   81s] + for f in ${myargs}
+[   81s] + '[' -f /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb ']'
+[   81s] ++ realpath /usr/bin/python3.12
+[   81s] + sed -i '1s@#\!.*python.*@#\!/usr/bin/python3.12@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb
+[   81s] + for f in ${myargs}
+[   81s] + '[' -f /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-download ']'
+[   81s] ++ realpath /usr/bin/python3.12
+[   81s] + sed -i '1s@#\!.*python.*@#\!/usr/bin/python3.12@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-download
+[   81s] + for f in ${myargs}
+[   81s] + '[' -f /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-install ']'
+[   81s] ++ realpath /usr/bin/python3.12
+[   81s] + sed -i '1s@#\!.*python.*@#\!/usr/bin/python3.12@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-install
+[   81s] + for f in ${myargs}
+[   81s] + '[' -f '/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/sbin/*' ']'
+[   81s] ++ '[' -f _current_flavor ']'
+[   81s] ++ cat _current_flavor
+[   81s] + last_flavor=python312
+[   81s] + '[' -z python312 ']'
+[   81s] + '[' python312 '!=' python311 ']'
+[   81s] + '[' -d build ']'
+[   81s] + mv build _build.python312
+[   81s] + '[' -d _build.python311 ']'
+[   81s] + mv _build.python311 build
+[   81s] + echo python311
+[   81s] + python_flavor=python311
+[   81s] + myargs=
+[   81s] + /usr/bin/python3.11 setup.py install -O1 --skip-build --force --root /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64 --prefix /usr
+[   82s] /usr/lib/python3.11/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[   82s] !!
+[   82s] 
+[   82s]         ********************************************************************************
+[   82s]         Please avoid running ``setup.py`` directly.
+[   82s]         Instead, use pypa/build, pypa/installer or other
+[   82s]         standards-based tools.
+[   82s] 
+[   82s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[   82s]         ********************************************************************************
+[   82s] 
+[   82s] !!
+[   82s]   self.initialize_options()
+[   84s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.11/site-packages /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib64/python3.11/site-packages
+[   84s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.11/site-packages ']'
+[   84s] + find /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.11/site-packages -iname '*.pyc' -delete
+[   84s] + xargs -0 /usr/bin/python3.11 -c ' 
+[   84s] import sys, py_compile 
+[   84s] for f in sys.argv[1:]: 
+[   84s]   fp=f[len("/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64"):] 
+[   84s]   print("Generating cached byte-code for " + str(fp)) 
+[   84s]   if sys.version[0] == "2": 
+[   84s]     py_compile.compile(f, dfile=fp) 
+[   84s]   else: 
+[   84s]     for o in [0, 1]: 
+[   84s]       py_compile.compile(f, dfile=fp, optimize=o) 
+[   84s] '
+[   84s] + find /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.11/site-packages -iname '*.py' -print0
+[   85s] Generating cached byte-code for /usr/lib/python3.11/site-packages/stdeb/__init__.py
+[   85s] Generating cached byte-code for /usr/lib/python3.11/site-packages/stdeb/cli_runner.py
+[   85s] Generating cached byte-code for /usr/lib/python3.11/site-packages/stdeb/downloader.py
+[   85s] Generating cached byte-code for /usr/lib/python3.11/site-packages/stdeb/transport.py
+[   85s] Generating cached byte-code for /usr/lib/python3.11/site-packages/stdeb/util.py
+[   85s] Generating cached byte-code for /usr/lib/python3.11/site-packages/stdeb/command/__init__.py
+[   85s] Generating cached byte-code for /usr/lib/python3.11/site-packages/stdeb/command/bdist_deb.py
+[   85s] Generating cached byte-code for /usr/lib/python3.11/site-packages/stdeb/command/common.py
+[   85s] Generating cached byte-code for /usr/lib/python3.11/site-packages/stdeb/command/debianize.py
+[   85s] Generating cached byte-code for /usr/lib/python3.11/site-packages/stdeb/command/install_deb.py
+[   85s] Generating cached byte-code for /usr/lib/python3.11/site-packages/stdeb/command/sdist_dsc.py
+[   85s] + for d in /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.11/site-packages /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib64/python3.11/site-packages
+[   85s] + '[' -d /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib64/python3.11/site-packages ']'
+[   85s] + myargs='/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/* /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/sbin/*'
+[   85s] + for f in ${myargs}
+[   85s] + '[' -f /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc ']'
+[   85s] ++ realpath /usr/bin/python3.11
+[   85s] + sed -i '1s@#\!.*python.*@#\!/usr/bin/python3.11@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc
+[   85s] + for f in ${myargs}
+[   85s] + '[' -f /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb ']'
+[   85s] ++ realpath /usr/bin/python3.11
+[   85s] + sed -i '1s@#\!.*python.*@#\!/usr/bin/python3.11@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb
+[   85s] + for f in ${myargs}
+[   85s] + '[' -f /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-download ']'
+[   85s] ++ realpath /usr/bin/python3.11
+[   85s] + sed -i '1s@#\!.*python.*@#\!/usr/bin/python3.11@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-download
+[   85s] + for f in ${myargs}
+[   85s] + '[' -f /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-install ']'
+[   85s] ++ realpath /usr/bin/python3.11
+[   85s] + sed -i '1s@#\!.*python.*@#\!/usr/bin/python3.11@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-install
+[   85s] + for f in ${myargs}
+[   85s] + '[' -f '/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/sbin/*' ']'
+[   85s] + cp /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-install /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-install-3.10
+[   85s] ++ realpath /usr/bin/python3.10
+[   85s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.10@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-install-3.10
+[   85s] + cp /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-install /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-install-3.12
+[   85s] ++ realpath /usr/bin/python3.12
+[   85s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.12@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-install-3.12
+[   85s] + cp /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-install /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-install-3.11
+[   85s] ++ realpath /usr/bin/python3.11
+[   85s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.11@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-install-3.11
+[   85s] + rm -f /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-install
+[   85s] + alternative_target=/usr/bin/pypi-install
+[   85s] + [[ /usr/bin/pypi-install == /usr/share/man* ]]
+[   85s] + '[' 0 -eq 1 ']'
+[   85s] + mkdir -p /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/etc/alternatives
+[   85s] + touch /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/etc/alternatives/pypi-install
+[   86s] + ln -sf /etc/alternatives/pypi-install /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-install
+[   86s] + cp /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-download /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-download-3.10
+[   86s] ++ realpath /usr/bin/python3.10
+[   86s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.10@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-download-3.10
+[   86s] + cp /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-download /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-download-3.12
+[   86s] ++ realpath /usr/bin/python3.12
+[   86s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.12@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-download-3.12
+[   86s] + cp /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-download /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-download-3.11
+[   86s] ++ realpath /usr/bin/python3.11
+[   86s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.11@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-download-3.11
+[   86s] + rm -f /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-download
+[   86s] + alternative_target=/usr/bin/pypi-download
+[   86s] + [[ /usr/bin/pypi-download == /usr/share/man* ]]
+[   86s] + '[' 0 -eq 1 ']'
+[   86s] + mkdir -p /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/etc/alternatives
+[   86s] + touch /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/etc/alternatives/pypi-download
+[   86s] + ln -sf /etc/alternatives/pypi-download /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-download
+[   86s] + cp /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb-3.10
+[   86s] ++ realpath /usr/bin/python3.10
+[   86s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.10@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb-3.10
+[   86s] + cp /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb-3.12
+[   86s] ++ realpath /usr/bin/python3.12
+[   86s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.12@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb-3.12
+[   86s] + cp /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb-3.11
+[   86s] ++ realpath /usr/bin/python3.11
+[   86s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.11@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb-3.11
+[   86s] + rm -f /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb
+[   86s] + alternative_target=/usr/bin/py2dsc-deb
+[   86s] + [[ /usr/bin/py2dsc-deb == /usr/share/man* ]]
+[   86s] + '[' 0 -eq 1 ']'
+[   86s] + mkdir -p /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/etc/alternatives
+[   86s] + touch /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/etc/alternatives/py2dsc-deb
+[   86s] + ln -sf /etc/alternatives/py2dsc-deb /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb
+[   86s] + cp /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-3.10
+[   86s] ++ realpath /usr/bin/python3.10
+[   86s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.10@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-3.10
+[   86s] + cp /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-3.12
+[   87s] ++ realpath /usr/bin/python3.12
+[   87s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.12@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-3.12
+[   87s] + cp /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-3.11
+[   87s] ++ realpath /usr/bin/python3.11
+[   87s] + sed -ri '1s@#!.*python.*@#!/usr/bin/python3.11@' /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-3.11
+[   87s] + rm -f /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc
+[   87s] + alternative_target=/usr/bin/py2dsc
+[   87s] + [[ /usr/bin/py2dsc == /usr/share/man* ]]
+[   87s] + '[' 0 -eq 1 ']'
+[   87s] + mkdir -p /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/etc/alternatives
+[   87s] + touch /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/etc/alternatives/py2dsc
+[   87s] + ln -sf /etc/alternatives/py2dsc /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc
+[   87s] ++ '[' -f _current_flavor ']'
+[   87s] ++ cat _current_flavor
+[   87s] + last_flavor=python311
+[   87s] + '[' -z python311 ']'
+[   87s] + '[' python311 '!=' python310 ']'
+[   87s] + '[' -d build ']'
+[   87s] + mv build _build.python311
+[   87s] + '[' -d _build.python310 ']'
+[   87s] + mv _build.python310 build
+[   87s] + echo python310
+[   87s] + python_flavor=python310
+[   87s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.10/site-packages
+[   87s] Linking /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.10/site-packages/stdeb/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.10/site-packages/stdeb/__pycache__/__init__.cpython-310.pyc
+[   87s] Linking /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.10/site-packages/stdeb/command/__pycache__/install_deb.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.10/site-packages/stdeb/command/__pycache__/install_deb.cpython-310.pyc
+[   87s] Linking /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.10/site-packages/stdeb/command/__pycache__/debianize.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.10/site-packages/stdeb/command/__pycache__/debianize.cpython-310.pyc
+[   87s] Linking /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.10/site-packages/stdeb/command/__pycache__/bdist_deb.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.10/site-packages/stdeb/command/__pycache__/bdist_deb.cpython-310.pyc
+[   87s] Linking /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.10/site-packages/stdeb/command/__pycache__/__init__.cpython-310.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.10/site-packages/stdeb/command/__pycache__/__init__.cpython-310.pyc
+[   87s] ++ '[' -f _current_flavor ']'
+[   87s] ++ cat _current_flavor
+[   87s] + last_flavor=python310
+[   87s] + '[' -z python310 ']'
+[   87s] + '[' python310 '!=' python312 ']'
+[   87s] + '[' -d build ']'
+[   87s] + mv build _build.python310
+[   87s] + '[' -d _build.python312 ']'
+[   87s] + mv _build.python312 build
+[   87s] + echo python312
+[   87s] + python_flavor=python312
+[   87s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.12/site-packages
+[   87s] Linking /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.12/site-packages/stdeb/__pycache__/__init__.cpython-312.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.12/site-packages/stdeb/__pycache__/__init__.cpython-312.pyc
+[   87s] Linking /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.12/site-packages/stdeb/command/__pycache__/install_deb.cpython-312.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.12/site-packages/stdeb/command/__pycache__/install_deb.cpython-312.pyc
+[   87s] Linking /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.12/site-packages/stdeb/command/__pycache__/debianize.cpython-312.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.12/site-packages/stdeb/command/__pycache__/debianize.cpython-312.pyc
+[   87s] Linking /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.12/site-packages/stdeb/command/__pycache__/bdist_deb.cpython-312.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.12/site-packages/stdeb/command/__pycache__/bdist_deb.cpython-312.pyc
+[   87s] Linking /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.12/site-packages/stdeb/command/__pycache__/__init__.cpython-312.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.12/site-packages/stdeb/command/__pycache__/__init__.cpython-312.pyc
+[   87s] ++ '[' -f _current_flavor ']'
+[   87s] ++ cat _current_flavor
+[   87s] + last_flavor=python312
+[   87s] + '[' -z python312 ']'
+[   87s] + '[' python312 '!=' python311 ']'
+[   87s] + '[' -d build ']'
+[   87s] + mv build _build.python312
+[   87s] + '[' -d _build.python311 ']'
+[   87s] + mv _build.python311 build
+[   87s] + echo python311
+[   87s] + python_flavor=python311
+[   87s] + /usr/lib/rpm/fdupes_wrapper /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.11/site-packages
+[   87s] Linking /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.11/site-packages/stdeb/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.11/site-packages/stdeb/__pycache__/__init__.cpython-311.pyc
+[   87s] Linking /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.11/site-packages/stdeb/command/__pycache__/install_deb.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.11/site-packages/stdeb/command/__pycache__/install_deb.cpython-311.pyc
+[   87s] Linking /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.11/site-packages/stdeb/command/__pycache__/debianize.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.11/site-packages/stdeb/command/__pycache__/debianize.cpython-311.pyc
+[   87s] Linking /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.11/site-packages/stdeb/command/__pycache__/bdist_deb.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.11/site-packages/stdeb/command/__pycache__/bdist_deb.cpython-311.pyc
+[   87s] Linking /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.11/site-packages/stdeb/command/__pycache__/__init__.cpython-311.opt-1.pyc -> /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.11/site-packages/stdeb/command/__pycache__/__init__.cpython-311.pyc
+[   87s] + /usr/lib/rpm/find-debuginfo -j4 -n --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 50000000 -S debugsourcefiles.list /home/abuild/rpmbuild/BUILD/stdeb-0.10.0
+[   88s] + /usr/lib/rpm/brp-compress
+[   88s] + /usr/lib/rpm/brp-suse
+[   88s] calling /usr/lib/rpm/brp-suse.d/brp-05-permissions
+[   89s] calling /usr/lib/rpm/brp-suse.d/brp-15-strip-debug
+[   89s] calling /usr/lib/rpm/brp-suse.d/brp-25-symlink
+[   89s] calling /usr/lib/rpm/brp-suse.d/brp-50-generate-fips-hmac
+[   89s] calling /usr/lib/rpm/brp-suse.d/brp-75-ar
+[   89s] Executing(%check): /usr/bin/bash -e /var/tmp/rpm-tmp.ZdIqF5
+[   89s] + umask 022
+[   89s] + cd /home/abuild/rpmbuild/BUILD
+[   89s] + cd stdeb-0.10.0
+[   89s] + cp test.sh test.sh.orig
+[   89s] + export PATH=/sbin:/usr/sbin:/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64//usr/bin:/usr/local/bin:/usr/bin:/bin
+[   89s] + PATH=/sbin:/usr/sbin:/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64//usr/bin:/usr/local/bin:/usr/bin:/bin
+[   89s] ++ '[' -f _current_flavor ']'
+[   89s] ++ cat _current_flavor
+[   89s] + last_flavor=python311
+[   89s] + '[' -z python311 ']'
+[   89s] + '[' python311 '!=' python310 ']'
+[   89s] + '[' -d build ']'
+[   89s] + mv build _build.python311
+[   89s] + '[' -d _build.python310 ']'
+[   89s] + mv _build.python310 build
+[   89s] + echo python310
+[   89s] + python_flavor=python310
+[   89s] + export PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.10/site-packages
+[   89s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.10/site-packages
+[   89s] + cp test.sh.orig test.sh
+[   89s] + sed -i 's:\(_LOC=`which\s\+[-a-zA-Z0-9]\+\):\1-3.10:' test.sh
+[   89s] + PYEXE=python3.10
+[   89s] + bash -x ./test.sh
+[   89s] + set -e
+[   89s] + rm -rf deb_dist
+[   89s] + '[' python3.10 == '' ']'
+[   89s] + echo 'using Python at python3.10'
+[   89s] using Python at python3.10
+[   89s] ++ which py2dsc-3.10
+[   89s] + PY2DSC_LOC=/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-3.10
+[   90s] ++ which py2dsc-deb-3.10
+[   90s] + PY2DSC_DEB_LOC=/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb-3.10
+[   90s] ++ which pypi-download-3.10
+[   90s] + PYPI_DOWNLOAD_LOC=/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-download-3.10
+[   90s] ++ which pypi-install-3.10
+[   90s] + PYPI_INSTALL_LOC=/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-install-3.10
+[   90s] + PY2DSC='python3.10 /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-3.10'
+[   90s] + PY2DSC_DEB='python3.10 /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb-3.10'
+[   90s] + PYPI_DOWNLOAD='python3.10 /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-download-3.10'
+[   90s] + PYPI_INSTALL='python3.10 /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-install-3.10'
+[   90s] + python3.10 /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-3.10 --help
+[   91s] + python3.10 /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb-3.10 --help
+[   92s] + python3.10 /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-download-3.10 --help
+[   93s] + python3.10 /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-install-3.10 --help
+[   95s] + MAX_DEB_SPECIFIC_SIZE=5000
+[   95s] ++ seq 1
+[   95s] + for i in `seq 1`
+[   95s] + '[' 1 -eq 1 ']'
+[   95s] + SOURCE_PACKAGE=tablib
+[   95s] + SOURCE_RELEASE=0.13.0
+[   95s] + SOURCE_TARBALL_DIR=tablib-0.13.0
+[   95s] + SOURCE_TARBALL=tablib-0.13.0.tar.gz
+[   95s] + DEBSOURCE=tablib-0.13.0
+[   95s] + export DEB_BUILD_OPTIONS=nocheck
+[   95s] + DEB_BUILD_OPTIONS=nocheck
+[   95s] + python3.10 /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-3.10 tablib-0.13.0.tar.gz
+[   96s] -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+[   96s] running the following command in directory: deb_dist/tmp_py2dsc/tablib-0.13.0
+[   96s] /usr/bin/python3.10 setup.py --command-packages stdeb.command sdist_dsc --dist-dir=/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/deb_dist --use-premade-distfile=/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/tablib-0.13.0.tar.gz
+[   96s] -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+[   97s] running sdist_dsc
+[   97s] running egg_info
+[   97s] writing tablib.egg-info/PKG-INFO
+[   97s] writing dependency_links to tablib.egg-info/dependency_links.txt
+[   97s] writing requirements to tablib.egg-info/requires.txt
+[   97s] writing top-level names to tablib.egg-info/top_level.txt
+[   97s] reading manifest file 'tablib.egg-info/SOURCES.txt'
+[   97s] reading manifest template 'MANIFEST.in'
+[   97s] adding license file 'LICENSE'
+[   97s] adding license file 'NOTICE'
+[   97s] adding license file 'AUTHORS'
+[   97s] writing manifest file 'tablib.egg-info/SOURCES.txt'
+[   98s] dpkg-buildpackage: info: source package tablib
+[   98s] dpkg-buildpackage: info: source version 0.13.0-1
+[   98s] dpkg-buildpackage: info: source distribution unstable
+[   98s] dpkg-buildpackage: info: source changed by None <None>
+[   98s]  dpkg-source --before-build .
+[   99s] dpkg-source: info: using options from tablib-0.13.0/debian/source/options: --extend-diff-ignore=\.egg-info$
+[   99s]  fakeroot debian/rules clean
+[  100s] dh clean --buildsystem=python_distutils
+[  100s] dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  100s]    debian/rules override_dh_auto_clean
+[  100s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/deb_dist/tablib-0.13.0'
+[  100s] python3 setup.py clean -a
+[  101s] running clean
+[  101s] 'build/lib' does not exist -- can't clean it
+[  101s] 'build/bdist.linux-riscv64' does not exist -- can't clean it
+[  101s] 'build/scripts-3.11' does not exist -- can't clean it
+[  102s] find . -name \*.pyc -exec rm {} \;
+[  102s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/deb_dist/tablib-0.13.0'
+[  102s]    dh_clean -O--buildsystem=python_distutils
+[  102s] dh_clean: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  102s]  dpkg-source -b .
+[  103s] dpkg-source: info: using options from tablib-0.13.0/debian/source/options: --extend-diff-ignore=\.egg-info$
+[  103s] dpkg-source: info: using source format '3.0 (quilt)'
+[  103s] dpkg-source: info: building tablib using existing ./tablib_0.13.0.orig.tar.gz
+[  103s] dpkg-source: info: building tablib in tablib_0.13.0-1.debian.tar.xz
+[  104s] dpkg-source: info: building tablib in tablib_0.13.0-1.dsc
+[  104s]  dpkg-genbuildinfo --build=source -O../tablib_0.13.0-1_source.buildinfo
+[  104s] Use of uninitialized value $value in pattern match (m//) at /usr/lib/perl5/vendor_perl/5.38.2/Dpkg/Control/HashCore.pm line 382.
+[  104s]  dpkg-genchanges -sa --build=source -O../tablib_0.13.0-1_source.changes
+[  105s] Use of uninitialized value $vendor in lc at /usr/lib/perl5/vendor_perl/5.38.2/Dpkg/Substvars.pm line 278.
+[  105s] dpkg-genchanges: info: including full source code in upload
+[  105s]  dpkg-source --after-build .
+[  106s] dpkg-source: info: using options from tablib-0.13.0/debian/source/options: --extend-diff-ignore=\.egg-info$
+[  106s] dpkg-buildpackage: info: source-only upload (original source is included)
+[  107s] dpkg-source: warning: extracting unsigned source package (tablib_0.13.0-1.dsc)
+[  107s] dpkg-source: info: extracting tablib in tablib-0.13.0
+[  107s] dpkg-source: info: unpacking tablib_0.13.0.orig.tar.gz
+[  107s] dpkg-source: info: unpacking tablib_0.13.0-1.debian.tar.xz
+[  107s] + cd deb_dist/tablib-0.13.0
+[  107s] + dpkg-buildpackage -d -rfakeroot -uc -us
+[  108s] dpkg-buildpackage: info: source package tablib
+[  108s] dpkg-buildpackage: info: source version 0.13.0-1
+[  108s] dpkg-buildpackage: info: source distribution unstable
+[  108s] dpkg-buildpackage: info: source changed by None <None>
+[  109s]  dpkg-source --before-build .
+[  109s] dpkg-buildpackage: info: host architecture riscv64
+[  109s] dpkg-source: info: using options from tablib-0.13.0/debian/source/options: --extend-diff-ignore=\.egg-info$
+[  109s]  fakeroot debian/rules clean
+[  110s] dh clean --buildsystem=python_distutils
+[  110s] dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  110s]    debian/rules override_dh_auto_clean
+[  110s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/deb_dist/tablib-0.13.0'
+[  110s] python3 setup.py clean -a
+[  111s] running clean
+[  112s] 'build/lib' does not exist -- can't clean it
+[  112s] 'build/bdist.linux-riscv64' does not exist -- can't clean it
+[  112s] 'build/scripts-3.11' does not exist -- can't clean it
+[  112s] find . -name \*.pyc -exec rm {} \;
+[  112s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/deb_dist/tablib-0.13.0'
+[  112s]    dh_clean -O--buildsystem=python_distutils
+[  112s] dh_clean: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  112s]  dpkg-source -b .
+[  113s] dpkg-source: info: using options from tablib-0.13.0/debian/source/options: --extend-diff-ignore=\.egg-info$
+[  113s] dpkg-source: info: using source format '3.0 (quilt)'
+[  113s] dpkg-source: info: building tablib using existing ./tablib_0.13.0.orig.tar.gz
+[  114s] dpkg-source: info: building tablib in tablib_0.13.0-1.debian.tar.xz
+[  114s] dpkg-source: info: building tablib in tablib_0.13.0-1.dsc
+[  114s]  debian/rules build
+[  114s] dh build --buildsystem=python_distutils
+[  114s] dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  114s]    dh_update_autotools_config -O--buildsystem=python_distutils
+[  115s]    dh_auto_configure -O--buildsystem=python_distutils
+[  115s] dh_auto_configure: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  115s] dh_auto_configure: warning: Please use the third-party "pybuild" build system instead of python-distutils
+[  115s] dh_auto_configure: warning: This feature will be removed in compat 12.
+[  115s]    debian/rules override_dh_auto_build
+[  115s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/deb_dist/tablib-0.13.0'
+[  115s] python3 setup.py build --force
+[  116s] running build
+[  116s] running build_py
+[  116s] creating build
+[  116s] creating build/lib
+[  116s] creating build/lib/tablib
+[  116s] copying tablib/__init__.py -> build/lib/tablib
+[  116s] copying tablib/compat.py -> build/lib/tablib
+[  116s] copying tablib/core.py -> build/lib/tablib
+[  116s] creating build/lib/tablib/formats
+[  116s] copying tablib/formats/__init__.py -> build/lib/tablib/formats
+[  116s] copying tablib/formats/_csv.py -> build/lib/tablib/formats
+[  116s] copying tablib/formats/_dbf.py -> build/lib/tablib/formats
+[  116s] copying tablib/formats/_df.py -> build/lib/tablib/formats
+[  116s] copying tablib/formats/_html.py -> build/lib/tablib/formats
+[  116s] copying tablib/formats/_jira.py -> build/lib/tablib/formats
+[  116s] copying tablib/formats/_json.py -> build/lib/tablib/formats
+[  116s] copying tablib/formats/_latex.py -> build/lib/tablib/formats
+[  116s] copying tablib/formats/_ods.py -> build/lib/tablib/formats
+[  116s] copying tablib/formats/_rst.py -> build/lib/tablib/formats
+[  116s] copying tablib/formats/_tsv.py -> build/lib/tablib/formats
+[  116s] copying tablib/formats/_xls.py -> build/lib/tablib/formats
+[  116s] copying tablib/formats/_xlsx.py -> build/lib/tablib/formats
+[  116s] copying tablib/formats/_yaml.py -> build/lib/tablib/formats
+[  116s] creating build/lib/tablib/packages
+[  116s] copying tablib/packages/__init__.py -> build/lib/tablib/packages
+[  116s] copying tablib/packages/markup.py -> build/lib/tablib/packages
+[  116s] copying tablib/packages/markup3.py -> build/lib/tablib/packages
+[  116s] copying tablib/packages/statistics.py -> build/lib/tablib/packages
+[  116s] creating build/lib/tablib/packages/dbfpy
+[  116s] copying tablib/packages/dbfpy/__init__.py -> build/lib/tablib/packages/dbfpy
+[  116s] copying tablib/packages/dbfpy/dbf.py -> build/lib/tablib/packages/dbfpy
+[  116s] copying tablib/packages/dbfpy/dbfnew.py -> build/lib/tablib/packages/dbfpy
+[  116s] copying tablib/packages/dbfpy/fields.py -> build/lib/tablib/packages/dbfpy
+[  116s] copying tablib/packages/dbfpy/header.py -> build/lib/tablib/packages/dbfpy
+[  116s] copying tablib/packages/dbfpy/record.py -> build/lib/tablib/packages/dbfpy
+[  116s] copying tablib/packages/dbfpy/utils.py -> build/lib/tablib/packages/dbfpy
+[  116s] creating build/lib/tablib/packages/dbfpy3
+[  116s] copying tablib/packages/dbfpy3/__init__.py -> build/lib/tablib/packages/dbfpy3
+[  116s] copying tablib/packages/dbfpy3/dbf.py -> build/lib/tablib/packages/dbfpy3
+[  116s] copying tablib/packages/dbfpy3/dbfnew.py -> build/lib/tablib/packages/dbfpy3
+[  116s] copying tablib/packages/dbfpy3/fields.py -> build/lib/tablib/packages/dbfpy3
+[  116s] copying tablib/packages/dbfpy3/header.py -> build/lib/tablib/packages/dbfpy3
+[  116s] copying tablib/packages/dbfpy3/record.py -> build/lib/tablib/packages/dbfpy3
+[  116s] copying tablib/packages/dbfpy3/utils.py -> build/lib/tablib/packages/dbfpy3
+[  116s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/deb_dist/tablib-0.13.0'
+[  116s]    dh_auto_test -O--buildsystem=python_distutils
+[  117s] dh_auto_test: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  117s]  fakeroot debian/rules binary
+[  117s] dh binary --buildsystem=python_distutils
+[  118s] dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  118s]    dh_auto_test -O--buildsystem=python_distutils
+[  118s] dh_auto_test: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  118s]    dh_testroot -O--buildsystem=python_distutils
+[  119s]    dh_prep -O--buildsystem=python_distutils
+[  119s]    debian/rules override_dh_auto_install
+[  119s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/deb_dist/tablib-0.13.0'
+[  119s] python3 setup.py install --force --root=debian/python3-tablib --no-compile -O0  
+[  120s] running install
+[  120s] /usr/lib/python3.11/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[  120s] !!
+[  120s] 
+[  120s]         ********************************************************************************
+[  120s]         Please avoid running ``setup.py`` directly.
+[  120s]         Instead, use pypa/build, pypa/installer or other
+[  120s]         standards-based tools.
+[  120s] 
+[  120s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[  120s]         ********************************************************************************
+[  120s] 
+[  120s] !!
+[  120s]   self.initialize_options()
+[  120s] running build
+[  120s] running build_py
+[  120s] running install_lib
+[  120s] creating debian/python3-tablib
+[  120s] creating debian/python3-tablib/usr
+[  120s] creating debian/python3-tablib/usr/lib
+[  120s] creating debian/python3-tablib/usr/lib/python3.11
+[  120s] creating debian/python3-tablib/usr/lib/python3.11/site-packages
+[  120s] creating debian/python3-tablib/usr/lib/python3.11/site-packages/tablib
+[  120s] copying build/lib/tablib/__init__.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib
+[  120s] copying build/lib/tablib/compat.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib
+[  120s] copying build/lib/tablib/core.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib
+[  120s] creating debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  120s] copying build/lib/tablib/formats/__init__.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  120s] copying build/lib/tablib/formats/_csv.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  120s] copying build/lib/tablib/formats/_dbf.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  120s] copying build/lib/tablib/formats/_df.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  120s] copying build/lib/tablib/formats/_html.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  120s] copying build/lib/tablib/formats/_jira.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  120s] copying build/lib/tablib/formats/_json.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  120s] copying build/lib/tablib/formats/_latex.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  120s] copying build/lib/tablib/formats/_ods.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  120s] copying build/lib/tablib/formats/_rst.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  120s] copying build/lib/tablib/formats/_tsv.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  120s] copying build/lib/tablib/formats/_xls.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  120s] copying build/lib/tablib/formats/_xlsx.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  120s] copying build/lib/tablib/formats/_yaml.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  120s] creating debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages
+[  120s] copying build/lib/tablib/packages/__init__.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages
+[  120s] copying build/lib/tablib/packages/markup.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages
+[  120s] copying build/lib/tablib/packages/markup3.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages
+[  120s] copying build/lib/tablib/packages/statistics.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages
+[  120s] creating debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  120s] copying build/lib/tablib/packages/dbfpy/__init__.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  120s] copying build/lib/tablib/packages/dbfpy/dbf.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  120s] copying build/lib/tablib/packages/dbfpy/dbfnew.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  120s] copying build/lib/tablib/packages/dbfpy/fields.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  120s] copying build/lib/tablib/packages/dbfpy/header.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  120s] copying build/lib/tablib/packages/dbfpy/record.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  120s] copying build/lib/tablib/packages/dbfpy/utils.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  120s] creating debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  120s] copying build/lib/tablib/packages/dbfpy3/__init__.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  120s] copying build/lib/tablib/packages/dbfpy3/dbf.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  120s] copying build/lib/tablib/packages/dbfpy3/dbfnew.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  120s] copying build/lib/tablib/packages/dbfpy3/fields.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  120s] copying build/lib/tablib/packages/dbfpy3/header.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  120s] copying build/lib/tablib/packages/dbfpy3/record.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  120s] copying build/lib/tablib/packages/dbfpy3/utils.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  120s] running install_egg_info
+[  120s] running egg_info
+[  120s] writing tablib.egg-info/PKG-INFO
+[  120s] writing dependency_links to tablib.egg-info/dependency_links.txt
+[  120s] writing requirements to tablib.egg-info/requires.txt
+[  120s] writing top-level names to tablib.egg-info/top_level.txt
+[  120s] reading manifest file 'tablib.egg-info/SOURCES.txt'
+[  120s] reading manifest template 'MANIFEST.in'
+[  120s] adding license file 'LICENSE'
+[  120s] adding license file 'NOTICE'
+[  120s] adding license file 'AUTHORS'
+[  120s] writing manifest file 'tablib.egg-info/SOURCES.txt'
+[  120s] Copying tablib.egg-info to debian/python3-tablib/usr/lib/python3.11/site-packages/tablib-0.13.0-py3.11.egg-info
+[  120s] running install_scripts
+[  121s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/deb_dist/tablib-0.13.0'
+[  121s]    dh_installdocs -O--buildsystem=python_distutils
+[  121s] dh_installdocs: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  121s]    dh_installchangelogs -O--buildsystem=python_distutils
+[  122s] dh_installchangelogs: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  122s]    dh_installinit -O--buildsystem=python_distutils
+[  123s] dh_installinit: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  123s]    dh_perl -O--buildsystem=python_distutils
+[  123s]    dh_link -O--buildsystem=python_distutils
+[  124s]    dh_strip_nondeterminism -O--buildsystem=python_distutils
+[  128s]    dh_compress -O--buildsystem=python_distutils
+[  128s] dh_compress: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  129s]    dh_fixperms -O--buildsystem=python_distutils
+[  130s]    dh_missing -O--buildsystem=python_distutils
+[  130s] dh_missing: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  130s]    dh_installdeb -O--buildsystem=python_distutils
+[  131s] dh_installdeb: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  131s]    dh_gencontrol -O--buildsystem=python_distutils
+[  132s] Use of uninitialized value $vendor in lc at /usr/lib/perl5/vendor_perl/5.38.2/Dpkg/Substvars.pm line 278.
+[  132s] dpkg-gencontrol: warning: Depends field of package python3-tablib: substitution variable ${python3:Depends} used, but is not defined
+[  132s]    dh_md5sums -O--buildsystem=python_distutils
+[  133s]    dh_builddeb -O--buildsystem=python_distutils
+[  133s] dpkg-deb: building package 'python3-tablib' in '../python3-tablib_0.13.0-1_all.deb'.
+[  134s]  dpkg-genbuildinfo -O../tablib_0.13.0-1_riscv64.buildinfo
+[  134s] Use of uninitialized value $value in pattern match (m//) at /usr/lib/perl5/vendor_perl/5.38.2/Dpkg/Control/HashCore.pm line 382.
+[  134s]  dpkg-genchanges -O../tablib_0.13.0-1_riscv64.changes
+[  135s] Use of uninitialized value $vendor in lc at /usr/lib/perl5/vendor_perl/5.38.2/Dpkg/Substvars.pm line 278.
+[  135s] dpkg-genchanges: info: including full source code in upload
+[  135s]  dpkg-source --after-build .
+[  136s] dpkg-source: info: using options from tablib-0.13.0/debian/source/options: --extend-diff-ignore=\.egg-info$
+[  136s] dpkg-buildpackage: info: full upload (original source is included)
+[  136s] + cd ../..
+[  136s] + for DEBFILE in deb_dist/*.deb
+[  136s] + echo 'contents of deb_dist/python3-tablib_0.13.0-1_all.deb from tablib-0.13.0.tar.gz in case 1:'
+[  136s] contents of deb_dist/python3-tablib_0.13.0-1_all.deb from tablib-0.13.0.tar.gz in case 1:
+[  136s] + dpkg --contents deb_dist/python3-tablib_0.13.0-1_all.deb
+[  136s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./
+[  136s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/
+[  136s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/
+[  136s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/
+[  136s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/
+[  136s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib/
+[  136s] -rw-r--r-- root/root       186 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/__init__.py
+[  136s] -rw-r--r-- root/root       771 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/compat.py
+[  136s] -rw-r--r-- root/root     34749 2019-03-08 12:16 ./usr/lib/python3.11/site-packages/tablib/core.py
+[  136s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib/formats/
+[  136s] -rw-r--r-- root/root       486 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/__init__.py
+[  136s] -rw-r--r-- root/root      1112 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_csv.py
+[  136s] -rw-r--r-- root/root      2661 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_dbf.py
+[  136s] -rw-r--r-- root/root      1040 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_df.py
+[  136s] -rw-r--r-- root/root      1641 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_html.py
+[  136s] -rw-r--r-- root/root       961 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_jira.py
+[  136s] -rw-r--r-- root/root      1260 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_json.py
+[  136s] -rw-r--r-- root/root      3708 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_latex.py
+[  136s] -rw-r--r-- root/root      2958 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_ods.py
+[  136s] -rw-r--r-- root/root      8168 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_rst.py
+[  136s] -rw-r--r-- root/root       761 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_tsv.py
+[  136s] -rw-r--r-- root/root      3307 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_xls.py
+[  136s] -rw-r--r-- root/root      3967 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_xlsx.py
+[  136s] -rw-r--r-- root/root      1181 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_yaml.py
+[  136s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib/packages/
+[  136s] -rw-r--r-- root/root         0 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/__init__.py
+[  136s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/
+[  136s] -rw-r--r-- root/root         0 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/__init__.py
+[  136s] -rw-r--r-- root/root      9234 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/dbf.py
+[  136s] -rw-r--r-- root/root      5458 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/dbfnew.py
+[  136s] -rw-r--r-- root/root     14524 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/fields.py
+[  136s] -rw-r--r-- root/root      9388 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/header.py
+[  136s] -rw-r--r-- root/root      8447 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/record.py
+[  136s] -rw-r--r-- root/root      4914 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/utils.py
+[  136s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/
+[  136s] -rw-r--r-- root/root         0 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/__init__.py
+[  136s] -rw-r--r-- root/root      9266 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/dbf.py
+[  136s] -rw-r--r-- root/root      5264 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/dbfnew.py
+[  136s] -rw-r--r-- root/root     14552 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/fields.py
+[  136s] -rw-r--r-- root/root      9247 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/header.py
+[  136s] -rw-r--r-- root/root      8545 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/record.py
+[  136s] -rw-r--r-- root/root      4885 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/utils.py
+[  136s] -rw-r--r-- root/root     18911 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/markup.py
+[  136s] -rw-r--r-- root/root     19021 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/markup3.py
+[  136s] -rw-r--r-- root/root       540 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/statistics.py
+[  136s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib-0.13.0-py3.11.egg-info/
+[  136s] -rw-r--r-- root/root      9585 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib-0.13.0-py3.11.egg-info/PKG-INFO
+[  136s] -rw-r--r-- root/root      1185 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib-0.13.0-py3.11.egg-info/SOURCES.txt
+[  136s] -rw-r--r-- root/root         1 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib-0.13.0-py3.11.egg-info/dependency_links.txt
+[  136s] -rw-r--r-- root/root        70 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib-0.13.0-py3.11.egg-info/requires.txt
+[  136s] -rw-r--r-- root/root         7 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib-0.13.0-py3.11.egg-info/top_level.txt
+[  136s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/share/
+[  136s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/share/doc/
+[  136s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/share/doc/python3-tablib/
+[  136s] -rw-r--r-- root/root       149 2022-04-24 02:49 ./usr/share/doc/python3-tablib/changelog.Debian.gz
+[  136s] -rw-r--r-- root/root      1963 2019-03-08 12:15 ./usr/share/doc/python3-tablib/changelog.gz
+[  136s] ++ stat -c %s deb_dist/tablib_0.13.0-1.debian.tar.xz
+[  136s] + DEB_SPECIFIC_SIZE=1112
+[  136s] + (( 1112>5000 ))
+[  136s] + echo 'tablib case 1: deb_specific size 1112'
+[  136s] tablib case 1: deb_specific size 1112
+[  136s] + rm -rf deb_dist
+[  136s] + tar xzf tablib-0.13.0.tar.gz
+[  136s] + cd tablib-0.13.0
+[  136s] + python3.10 -c 'import sys; print('\''sys.version'\'',sys.version)'
+[  137s] sys.version 3.10.14 (main, Mar 21 2024, 16:45:28) [GCC]
+[  137s] + python3.10 setup.py --command-packages=stdeb.command sdist_dsc
+[  138s] running sdist_dsc
+[  138s] running egg_info
+[  138s] writing tablib.egg-info/PKG-INFO
+[  138s] writing dependency_links to tablib.egg-info/dependency_links.txt
+[  138s] writing requirements to tablib.egg-info/requires.txt
+[  138s] writing top-level names to tablib.egg-info/top_level.txt
+[  138s] reading manifest file 'tablib.egg-info/SOURCES.txt'
+[  138s] reading manifest template 'MANIFEST.in'
+[  138s] adding license file 'LICENSE'
+[  138s] adding license file 'NOTICE'
+[  138s] adding license file 'AUTHORS'
+[  138s] writing manifest file 'tablib.egg-info/SOURCES.txt'
+[  138s] running sdist
+[  138s] running check
+[  138s] creating tablib-0.13.0
+[  138s] creating tablib-0.13.0/tablib
+[  138s] creating tablib-0.13.0/tablib.egg-info
+[  138s] creating tablib-0.13.0/tablib/formats
+[  138s] creating tablib-0.13.0/tablib/packages
+[  138s] creating tablib-0.13.0/tablib/packages/dbfpy
+[  138s] creating tablib-0.13.0/tablib/packages/dbfpy3
+[  138s] copying files to tablib-0.13.0...
+[  138s] copying AUTHORS -> tablib-0.13.0
+[  138s] copying HISTORY.rst -> tablib-0.13.0
+[  138s] copying LICENSE -> tablib-0.13.0
+[  138s] copying MANIFEST.in -> tablib-0.13.0
+[  138s] copying NOTICE -> tablib-0.13.0
+[  138s] copying README.rst -> tablib-0.13.0
+[  138s] copying setup.cfg -> tablib-0.13.0
+[  138s] copying setup.py -> tablib-0.13.0
+[  138s] copying test_tablib.py -> tablib-0.13.0
+[  138s] copying tablib/__init__.py -> tablib-0.13.0/tablib
+[  138s] copying tablib/compat.py -> tablib-0.13.0/tablib
+[  138s] copying tablib/core.py -> tablib-0.13.0/tablib
+[  138s] copying tablib.egg-info/PKG-INFO -> tablib-0.13.0/tablib.egg-info
+[  138s] copying tablib.egg-info/SOURCES.txt -> tablib-0.13.0/tablib.egg-info
+[  138s] copying tablib.egg-info/dependency_links.txt -> tablib-0.13.0/tablib.egg-info
+[  138s] copying tablib.egg-info/requires.txt -> tablib-0.13.0/tablib.egg-info
+[  138s] copying tablib.egg-info/top_level.txt -> tablib-0.13.0/tablib.egg-info
+[  138s] copying tablib/formats/__init__.py -> tablib-0.13.0/tablib/formats
+[  138s] copying tablib/formats/_csv.py -> tablib-0.13.0/tablib/formats
+[  138s] copying tablib/formats/_dbf.py -> tablib-0.13.0/tablib/formats
+[  138s] copying tablib/formats/_df.py -> tablib-0.13.0/tablib/formats
+[  138s] copying tablib/formats/_html.py -> tablib-0.13.0/tablib/formats
+[  138s] copying tablib/formats/_jira.py -> tablib-0.13.0/tablib/formats
+[  138s] copying tablib/formats/_json.py -> tablib-0.13.0/tablib/formats
+[  138s] copying tablib/formats/_latex.py -> tablib-0.13.0/tablib/formats
+[  138s] copying tablib/formats/_ods.py -> tablib-0.13.0/tablib/formats
+[  138s] copying tablib/formats/_rst.py -> tablib-0.13.0/tablib/formats
+[  138s] copying tablib/formats/_tsv.py -> tablib-0.13.0/tablib/formats
+[  138s] copying tablib/formats/_xls.py -> tablib-0.13.0/tablib/formats
+[  138s] copying tablib/formats/_xlsx.py -> tablib-0.13.0/tablib/formats
+[  138s] copying tablib/formats/_yaml.py -> tablib-0.13.0/tablib/formats
+[  138s] copying tablib/packages/__init__.py -> tablib-0.13.0/tablib/packages
+[  138s] copying tablib/packages/markup.py -> tablib-0.13.0/tablib/packages
+[  138s] copying tablib/packages/markup3.py -> tablib-0.13.0/tablib/packages
+[  138s] copying tablib/packages/statistics.py -> tablib-0.13.0/tablib/packages
+[  138s] copying tablib/packages/dbfpy/__init__.py -> tablib-0.13.0/tablib/packages/dbfpy
+[  138s] copying tablib/packages/dbfpy/dbf.py -> tablib-0.13.0/tablib/packages/dbfpy
+[  138s] copying tablib/packages/dbfpy/dbfnew.py -> tablib-0.13.0/tablib/packages/dbfpy
+[  138s] copying tablib/packages/dbfpy/fields.py -> tablib-0.13.0/tablib/packages/dbfpy
+[  138s] copying tablib/packages/dbfpy/header.py -> tablib-0.13.0/tablib/packages/dbfpy
+[  138s] copying tablib/packages/dbfpy/record.py -> tablib-0.13.0/tablib/packages/dbfpy
+[  138s] copying tablib/packages/dbfpy/utils.py -> tablib-0.13.0/tablib/packages/dbfpy
+[  138s] copying tablib/packages/dbfpy3/__init__.py -> tablib-0.13.0/tablib/packages/dbfpy3
+[  138s] copying tablib/packages/dbfpy3/dbf.py -> tablib-0.13.0/tablib/packages/dbfpy3
+[  138s] copying tablib/packages/dbfpy3/dbfnew.py -> tablib-0.13.0/tablib/packages/dbfpy3
+[  138s] copying tablib/packages/dbfpy3/fields.py -> tablib-0.13.0/tablib/packages/dbfpy3
+[  138s] copying tablib/packages/dbfpy3/header.py -> tablib-0.13.0/tablib/packages/dbfpy3
+[  138s] copying tablib/packages/dbfpy3/record.py -> tablib-0.13.0/tablib/packages/dbfpy3
+[  138s] copying tablib/packages/dbfpy3/utils.py -> tablib-0.13.0/tablib/packages/dbfpy3
+[  138s] copying tablib.egg-info/SOURCES.txt -> tablib-0.13.0/tablib.egg-info
+[  138s] Writing tablib-0.13.0/setup.cfg
+[  138s] creating dist
+[  138s] Creating tar archive
+[  138s] removing 'tablib-0.13.0' (and everything under it)
+[  139s] dpkg-buildpackage: info: source package tablib
+[  139s] dpkg-buildpackage: info: source version 0.13.0-1
+[  139s] dpkg-buildpackage: info: source distribution unstable
+[  139s] dpkg-buildpackage: info: source changed by None <None>
+[  140s]  dpkg-source --before-build .
+[  140s] dpkg-source: info: using options from tablib-0.13.0/debian/source/options: --extend-diff-ignore=\.egg-info$
+[  140s]  fakeroot debian/rules clean
+[  141s] dh clean --buildsystem=python_distutils
+[  141s] dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  141s]    debian/rules override_dh_auto_clean
+[  141s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/tablib-0.13.0/deb_dist/tablib-0.13.0'
+[  141s] python3 setup.py clean -a
+[  143s] running clean
+[  143s] 'build/lib' does not exist -- can't clean it
+[  143s] 'build/bdist.linux-riscv64' does not exist -- can't clean it
+[  143s] 'build/scripts-3.11' does not exist -- can't clean it
+[  143s] find . -name \*.pyc -exec rm {} \;
+[  143s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/tablib-0.13.0/deb_dist/tablib-0.13.0'
+[  143s]    dh_clean -O--buildsystem=python_distutils
+[  143s] dh_clean: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  143s]  dpkg-source -b .
+[  144s] dpkg-source: info: using options from tablib-0.13.0/debian/source/options: --extend-diff-ignore=\.egg-info$
+[  144s] dpkg-source: info: using source format '3.0 (quilt)'
+[  144s] dpkg-source: info: building tablib using existing ./tablib_0.13.0.orig.tar.gz
+[  145s] dpkg-source: info: building tablib in tablib_0.13.0-1.debian.tar.xz
+[  145s] dpkg-source: info: building tablib in tablib_0.13.0-1.dsc
+[  145s]  dpkg-genbuildinfo --build=source -O../tablib_0.13.0-1_source.buildinfo
+[  145s] Use of uninitialized value $value in pattern match (m//) at /usr/lib/perl5/vendor_perl/5.38.2/Dpkg/Control/HashCore.pm line 382.
+[  145s]  dpkg-genchanges -sa --build=source -O../tablib_0.13.0-1_source.changes
+[  146s] Use of uninitialized value $vendor in lc at /usr/lib/perl5/vendor_perl/5.38.2/Dpkg/Substvars.pm line 278.
+[  146s] dpkg-genchanges: info: including full source code in upload
+[  146s]  dpkg-source --after-build .
+[  147s] dpkg-source: info: using options from tablib-0.13.0/debian/source/options: --extend-diff-ignore=\.egg-info$
+[  147s] dpkg-buildpackage: info: source-only upload (original source is included)
+[  148s] dpkg-source: warning: extracting unsigned source package (tablib_0.13.0-1.dsc)
+[  148s] dpkg-source: info: extracting tablib in tablib-0.13.0
+[  148s] dpkg-source: info: unpacking tablib_0.13.0.orig.tar.gz
+[  148s] dpkg-source: info: unpacking tablib_0.13.0-1.debian.tar.xz
+[  148s] + cd deb_dist/tablib-0.13.0
+[  148s] + dpkg-buildpackage -d -rfakeroot -uc -us
+[  149s] dpkg-buildpackage: info: source package tablib
+[  149s] dpkg-buildpackage: info: source version 0.13.0-1
+[  149s] dpkg-buildpackage: info: source distribution unstable
+[  149s] dpkg-buildpackage: info: source changed by None <None>
+[  149s]  dpkg-source --before-build .
+[  149s] dpkg-buildpackage: info: host architecture riscv64
+[  150s] dpkg-source: info: using options from tablib-0.13.0/debian/source/options: --extend-diff-ignore=\.egg-info$
+[  150s]  fakeroot debian/rules clean
+[  151s] dh clean --buildsystem=python_distutils
+[  151s] dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  151s]    debian/rules override_dh_auto_clean
+[  151s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/tablib-0.13.0/deb_dist/tablib-0.13.0'
+[  151s] python3 setup.py clean -a
+[  152s] running clean
+[  152s] 'build/lib' does not exist -- can't clean it
+[  152s] 'build/bdist.linux-riscv64' does not exist -- can't clean it
+[  152s] 'build/scripts-3.11' does not exist -- can't clean it
+[  153s] find . -name \*.pyc -exec rm {} \;
+[  153s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/tablib-0.13.0/deb_dist/tablib-0.13.0'
+[  153s]    dh_clean -O--buildsystem=python_distutils
+[  153s] dh_clean: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  153s]  dpkg-source -b .
+[  154s] dpkg-source: info: using options from tablib-0.13.0/debian/source/options: --extend-diff-ignore=\.egg-info$
+[  154s] dpkg-source: info: using source format '3.0 (quilt)'
+[  154s] dpkg-source: info: building tablib using existing ./tablib_0.13.0.orig.tar.gz
+[  155s] dpkg-source: info: building tablib in tablib_0.13.0-1.debian.tar.xz
+[  155s] dpkg-source: info: building tablib in tablib_0.13.0-1.dsc
+[  155s]  debian/rules build
+[  155s] dh build --buildsystem=python_distutils
+[  155s] dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  155s]    dh_update_autotools_config -O--buildsystem=python_distutils
+[  156s]    dh_auto_configure -O--buildsystem=python_distutils
+[  156s] dh_auto_configure: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  156s] dh_auto_configure: warning: Please use the third-party "pybuild" build system instead of python-distutils
+[  156s] dh_auto_configure: warning: This feature will be removed in compat 12.
+[  156s]    debian/rules override_dh_auto_build
+[  156s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/tablib-0.13.0/deb_dist/tablib-0.13.0'
+[  156s] python3 setup.py build --force
+[  157s] running build
+[  157s] running build_py
+[  157s] creating build
+[  157s] creating build/lib
+[  157s] creating build/lib/tablib
+[  157s] copying tablib/__init__.py -> build/lib/tablib
+[  157s] copying tablib/compat.py -> build/lib/tablib
+[  157s] copying tablib/core.py -> build/lib/tablib
+[  157s] creating build/lib/tablib/formats
+[  157s] copying tablib/formats/__init__.py -> build/lib/tablib/formats
+[  157s] copying tablib/formats/_csv.py -> build/lib/tablib/formats
+[  157s] copying tablib/formats/_dbf.py -> build/lib/tablib/formats
+[  157s] copying tablib/formats/_df.py -> build/lib/tablib/formats
+[  157s] copying tablib/formats/_html.py -> build/lib/tablib/formats
+[  157s] copying tablib/formats/_jira.py -> build/lib/tablib/formats
+[  157s] copying tablib/formats/_json.py -> build/lib/tablib/formats
+[  157s] copying tablib/formats/_latex.py -> build/lib/tablib/formats
+[  157s] copying tablib/formats/_ods.py -> build/lib/tablib/formats
+[  157s] copying tablib/formats/_rst.py -> build/lib/tablib/formats
+[  157s] copying tablib/formats/_tsv.py -> build/lib/tablib/formats
+[  157s] copying tablib/formats/_xls.py -> build/lib/tablib/formats
+[  157s] copying tablib/formats/_xlsx.py -> build/lib/tablib/formats
+[  157s] copying tablib/formats/_yaml.py -> build/lib/tablib/formats
+[  157s] creating build/lib/tablib/packages
+[  157s] copying tablib/packages/__init__.py -> build/lib/tablib/packages
+[  157s] copying tablib/packages/markup.py -> build/lib/tablib/packages
+[  157s] copying tablib/packages/markup3.py -> build/lib/tablib/packages
+[  157s] copying tablib/packages/statistics.py -> build/lib/tablib/packages
+[  157s] creating build/lib/tablib/packages/dbfpy
+[  157s] copying tablib/packages/dbfpy/__init__.py -> build/lib/tablib/packages/dbfpy
+[  157s] copying tablib/packages/dbfpy/dbf.py -> build/lib/tablib/packages/dbfpy
+[  157s] copying tablib/packages/dbfpy/dbfnew.py -> build/lib/tablib/packages/dbfpy
+[  157s] copying tablib/packages/dbfpy/fields.py -> build/lib/tablib/packages/dbfpy
+[  157s] copying tablib/packages/dbfpy/header.py -> build/lib/tablib/packages/dbfpy
+[  157s] copying tablib/packages/dbfpy/record.py -> build/lib/tablib/packages/dbfpy
+[  157s] copying tablib/packages/dbfpy/utils.py -> build/lib/tablib/packages/dbfpy
+[  157s] creating build/lib/tablib/packages/dbfpy3
+[  157s] copying tablib/packages/dbfpy3/__init__.py -> build/lib/tablib/packages/dbfpy3
+[  157s] copying tablib/packages/dbfpy3/dbf.py -> build/lib/tablib/packages/dbfpy3
+[  157s] copying tablib/packages/dbfpy3/dbfnew.py -> build/lib/tablib/packages/dbfpy3
+[  157s] copying tablib/packages/dbfpy3/fields.py -> build/lib/tablib/packages/dbfpy3
+[  157s] copying tablib/packages/dbfpy3/header.py -> build/lib/tablib/packages/dbfpy3
+[  157s] copying tablib/packages/dbfpy3/record.py -> build/lib/tablib/packages/dbfpy3
+[  157s] copying tablib/packages/dbfpy3/utils.py -> build/lib/tablib/packages/dbfpy3
+[  157s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/tablib-0.13.0/deb_dist/tablib-0.13.0'
+[  157s]    dh_auto_test -O--buildsystem=python_distutils
+[  158s] dh_auto_test: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  158s]  fakeroot debian/rules binary
+[  158s] dh binary --buildsystem=python_distutils
+[  159s] dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  159s]    dh_auto_test -O--buildsystem=python_distutils
+[  159s] dh_auto_test: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  159s]    dh_testroot -O--buildsystem=python_distutils
+[  160s]    dh_prep -O--buildsystem=python_distutils
+[  160s]    debian/rules override_dh_auto_install
+[  160s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/tablib-0.13.0/deb_dist/tablib-0.13.0'
+[  160s] python3 setup.py install --force --root=debian/python3-tablib --no-compile -O0  
+[  161s] running install
+[  161s] /usr/lib/python3.11/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[  161s] !!
+[  161s] 
+[  161s]         ********************************************************************************
+[  161s]         Please avoid running ``setup.py`` directly.
+[  161s]         Instead, use pypa/build, pypa/installer or other
+[  161s]         standards-based tools.
+[  161s] 
+[  161s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[  161s]         ********************************************************************************
+[  161s] 
+[  161s] !!
+[  161s]   self.initialize_options()
+[  161s] running build
+[  161s] running build_py
+[  161s] running install_lib
+[  161s] creating debian/python3-tablib
+[  161s] creating debian/python3-tablib/usr
+[  161s] creating debian/python3-tablib/usr/lib
+[  161s] creating debian/python3-tablib/usr/lib/python3.11
+[  161s] creating debian/python3-tablib/usr/lib/python3.11/site-packages
+[  161s] creating debian/python3-tablib/usr/lib/python3.11/site-packages/tablib
+[  161s] copying build/lib/tablib/__init__.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib
+[  161s] copying build/lib/tablib/compat.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib
+[  161s] copying build/lib/tablib/core.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib
+[  161s] creating debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  161s] copying build/lib/tablib/formats/__init__.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  161s] copying build/lib/tablib/formats/_csv.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  161s] copying build/lib/tablib/formats/_dbf.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  161s] copying build/lib/tablib/formats/_df.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  161s] copying build/lib/tablib/formats/_html.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  161s] copying build/lib/tablib/formats/_jira.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  161s] copying build/lib/tablib/formats/_json.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  161s] copying build/lib/tablib/formats/_latex.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  161s] copying build/lib/tablib/formats/_ods.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  161s] copying build/lib/tablib/formats/_rst.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  161s] copying build/lib/tablib/formats/_tsv.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  161s] copying build/lib/tablib/formats/_xls.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  161s] copying build/lib/tablib/formats/_xlsx.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  161s] copying build/lib/tablib/formats/_yaml.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  161s] creating debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages
+[  161s] copying build/lib/tablib/packages/__init__.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages
+[  161s] copying build/lib/tablib/packages/markup.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages
+[  161s] copying build/lib/tablib/packages/markup3.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages
+[  161s] copying build/lib/tablib/packages/statistics.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages
+[  161s] creating debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  161s] copying build/lib/tablib/packages/dbfpy/__init__.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  161s] copying build/lib/tablib/packages/dbfpy/dbf.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  161s] copying build/lib/tablib/packages/dbfpy/dbfnew.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  161s] copying build/lib/tablib/packages/dbfpy/fields.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  161s] copying build/lib/tablib/packages/dbfpy/header.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  161s] copying build/lib/tablib/packages/dbfpy/record.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  161s] copying build/lib/tablib/packages/dbfpy/utils.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  161s] creating debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  161s] copying build/lib/tablib/packages/dbfpy3/__init__.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  161s] copying build/lib/tablib/packages/dbfpy3/dbf.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  161s] copying build/lib/tablib/packages/dbfpy3/dbfnew.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  161s] copying build/lib/tablib/packages/dbfpy3/fields.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  161s] copying build/lib/tablib/packages/dbfpy3/header.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  161s] copying build/lib/tablib/packages/dbfpy3/record.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  161s] copying build/lib/tablib/packages/dbfpy3/utils.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  161s] running install_egg_info
+[  161s] running egg_info
+[  161s] writing tablib.egg-info/PKG-INFO
+[  162s] writing dependency_links to tablib.egg-info/dependency_links.txt
+[  162s] writing requirements to tablib.egg-info/requires.txt
+[  162s] writing top-level names to tablib.egg-info/top_level.txt
+[  162s] reading manifest file 'tablib.egg-info/SOURCES.txt'
+[  162s] reading manifest template 'MANIFEST.in'
+[  162s] adding license file 'LICENSE'
+[  162s] adding license file 'NOTICE'
+[  162s] adding license file 'AUTHORS'
+[  162s] writing manifest file 'tablib.egg-info/SOURCES.txt'
+[  162s] Copying tablib.egg-info to debian/python3-tablib/usr/lib/python3.11/site-packages/tablib-0.13.0-py3.11.egg-info
+[  162s] running install_scripts
+[  162s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/tablib-0.13.0/deb_dist/tablib-0.13.0'
+[  162s]    dh_installdocs -O--buildsystem=python_distutils
+[  162s] dh_installdocs: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  162s]    dh_installchangelogs -O--buildsystem=python_distutils
+[  163s] dh_installchangelogs: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  163s]    dh_installinit -O--buildsystem=python_distutils
+[  164s] dh_installinit: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  164s]    dh_perl -O--buildsystem=python_distutils
+[  164s]    dh_link -O--buildsystem=python_distutils
+[  165s]    dh_strip_nondeterminism -O--buildsystem=python_distutils
+[  169s]    dh_compress -O--buildsystem=python_distutils
+[  170s] dh_compress: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  170s]    dh_fixperms -O--buildsystem=python_distutils
+[  171s]    dh_missing -O--buildsystem=python_distutils
+[  172s] dh_missing: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  172s]    dh_installdeb -O--buildsystem=python_distutils
+[  172s] dh_installdeb: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  172s]    dh_gencontrol -O--buildsystem=python_distutils
+[  173s] Use of uninitialized value $vendor in lc at /usr/lib/perl5/vendor_perl/5.38.2/Dpkg/Substvars.pm line 278.
+[  173s] dpkg-gencontrol: warning: Depends field of package python3-tablib: substitution variable ${python3:Depends} used, but is not defined
+[  173s]    dh_md5sums -O--buildsystem=python_distutils
+[  174s]    dh_builddeb -O--buildsystem=python_distutils
+[  175s] dpkg-deb: building package 'python3-tablib' in '../python3-tablib_0.13.0-1_all.deb'.
+[  175s]  dpkg-genbuildinfo -O../tablib_0.13.0-1_riscv64.buildinfo
+[  176s] Use of uninitialized value $value in pattern match (m//) at /usr/lib/perl5/vendor_perl/5.38.2/Dpkg/Control/HashCore.pm line 382.
+[  176s]  dpkg-genchanges -O../tablib_0.13.0-1_riscv64.changes
+[  176s] Use of uninitialized value $vendor in lc at /usr/lib/perl5/vendor_perl/5.38.2/Dpkg/Substvars.pm line 278.
+[  176s] dpkg-genchanges: info: including full source code in upload
+[  176s]  dpkg-source --after-build .
+[  177s] dpkg-source: info: using options from tablib-0.13.0/debian/source/options: --extend-diff-ignore=\.egg-info$
+[  177s] dpkg-buildpackage: info: full upload (original source is included)
+[  177s] + cd ../..
+[  177s] + for DEBFILE in deb_dist/*.deb
+[  177s] + echo 'contents of deb_dist/python3-tablib_0.13.0-1_all.deb from tablib-0.13.0.tar.gz in case 2:'
+[  177s] contents of deb_dist/python3-tablib_0.13.0-1_all.deb from tablib-0.13.0.tar.gz in case 2:
+[  177s] + dpkg --contents deb_dist/python3-tablib_0.13.0-1_all.deb
+[  177s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./
+[  177s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/
+[  177s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/
+[  177s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/
+[  177s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/
+[  177s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib/
+[  177s] -rw-r--r-- root/root       186 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/__init__.py
+[  177s] -rw-r--r-- root/root       771 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/compat.py
+[  177s] -rw-r--r-- root/root     34749 2019-03-08 12:16 ./usr/lib/python3.11/site-packages/tablib/core.py
+[  177s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib/formats/
+[  177s] -rw-r--r-- root/root       486 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/__init__.py
+[  177s] -rw-r--r-- root/root      1112 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_csv.py
+[  177s] -rw-r--r-- root/root      2661 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_dbf.py
+[  177s] -rw-r--r-- root/root      1040 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_df.py
+[  177s] -rw-r--r-- root/root      1641 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_html.py
+[  177s] -rw-r--r-- root/root       961 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_jira.py
+[  177s] -rw-r--r-- root/root      1260 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_json.py
+[  177s] -rw-r--r-- root/root      3708 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_latex.py
+[  177s] -rw-r--r-- root/root      2958 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_ods.py
+[  177s] -rw-r--r-- root/root      8168 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_rst.py
+[  177s] -rw-r--r-- root/root       761 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_tsv.py
+[  177s] -rw-r--r-- root/root      3307 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_xls.py
+[  177s] -rw-r--r-- root/root      3967 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_xlsx.py
+[  177s] -rw-r--r-- root/root      1181 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_yaml.py
+[  177s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib/packages/
+[  177s] -rw-r--r-- root/root         0 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/__init__.py
+[  177s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/
+[  177s] -rw-r--r-- root/root         0 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/__init__.py
+[  177s] -rw-r--r-- root/root      9234 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/dbf.py
+[  177s] -rw-r--r-- root/root      5458 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/dbfnew.py
+[  177s] -rw-r--r-- root/root     14524 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/fields.py
+[  177s] -rw-r--r-- root/root      9388 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/header.py
+[  177s] -rw-r--r-- root/root      8447 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/record.py
+[  177s] -rw-r--r-- root/root      4914 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/utils.py
+[  177s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/
+[  177s] -rw-r--r-- root/root         0 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/__init__.py
+[  177s] -rw-r--r-- root/root      9266 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/dbf.py
+[  177s] -rw-r--r-- root/root      5264 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/dbfnew.py
+[  177s] -rw-r--r-- root/root     14552 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/fields.py
+[  177s] -rw-r--r-- root/root      9247 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/header.py
+[  177s] -rw-r--r-- root/root      8545 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/record.py
+[  177s] -rw-r--r-- root/root      4885 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/utils.py
+[  177s] -rw-r--r-- root/root     18911 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/markup.py
+[  177s] -rw-r--r-- root/root     19021 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/markup3.py
+[  177s] -rw-r--r-- root/root       540 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/statistics.py
+[  177s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib-0.13.0-py3.11.egg-info/
+[  177s] -rw-r--r-- root/root      9585 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib-0.13.0-py3.11.egg-info/PKG-INFO
+[  177s] -rw-r--r-- root/root      1185 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib-0.13.0-py3.11.egg-info/SOURCES.txt
+[  177s] -rw-r--r-- root/root         1 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib-0.13.0-py3.11.egg-info/dependency_links.txt
+[  177s] -rw-r--r-- root/root        70 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib-0.13.0-py3.11.egg-info/requires.txt
+[  177s] -rw-r--r-- root/root         7 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib-0.13.0-py3.11.egg-info/top_level.txt
+[  177s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/share/
+[  177s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/share/doc/
+[  177s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/share/doc/python3-tablib/
+[  177s] -rw-r--r-- root/root       149 2022-04-24 02:49 ./usr/share/doc/python3-tablib/changelog.Debian.gz
+[  177s] -rw-r--r-- root/root      1963 2019-03-08 12:15 ./usr/share/doc/python3-tablib/changelog.gz
+[  177s] ++ stat -c %s deb_dist/tablib_0.13.0-1.debian.tar.xz
+[  177s] + DEB_SPECIFIC_SIZE=1112
+[  177s] + (( 1112>5000 ))
+[  177s] + echo 'tablib case 2: deb_specific size 1112'
+[  177s] tablib case 2: deb_specific size 1112
+[  177s] + cd ..
+[  177s] + rm -rf tablib-0.13.0
+[  177s] + python3.10 /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb-3.10 tablib-0.13.0.tar.gz
+[  179s] -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+[  179s] running the following command in directory: deb_dist/tmp_py2dsc/tablib-0.13.0
+[  179s] /usr/bin/python3.10 setup.py --command-packages stdeb.command sdist_dsc --dist-dir=/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/deb_dist --use-premade-distfile=/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/tablib-0.13.0.tar.gz bdist_deb
+[  179s] -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+[  180s] running sdist_dsc
+[  180s] running egg_info
+[  180s] writing tablib.egg-info/PKG-INFO
+[  180s] writing dependency_links to tablib.egg-info/dependency_links.txt
+[  180s] writing requirements to tablib.egg-info/requires.txt
+[  180s] writing top-level names to tablib.egg-info/top_level.txt
+[  180s] reading manifest file 'tablib.egg-info/SOURCES.txt'
+[  180s] reading manifest template 'MANIFEST.in'
+[  180s] adding license file 'LICENSE'
+[  180s] adding license file 'NOTICE'
+[  180s] adding license file 'AUTHORS'
+[  180s] writing manifest file 'tablib.egg-info/SOURCES.txt'
+[  181s] dpkg-buildpackage: info: source package tablib
+[  181s] dpkg-buildpackage: info: source version 0.13.0-1
+[  181s] dpkg-buildpackage: info: source distribution unstable
+[  181s] dpkg-buildpackage: info: source changed by None <None>
+[  181s]  dpkg-source --before-build .
+[  182s] dpkg-source: info: using options from tablib-0.13.0/debian/source/options: --extend-diff-ignore=\.egg-info$
+[  182s]  fakeroot debian/rules clean
+[  183s] dh clean --buildsystem=python_distutils
+[  183s] dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  183s]    debian/rules override_dh_auto_clean
+[  183s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/deb_dist/tablib-0.13.0'
+[  183s] python3 setup.py clean -a
+[  184s] running clean
+[  184s] 'build/lib' does not exist -- can't clean it
+[  184s] 'build/bdist.linux-riscv64' does not exist -- can't clean it
+[  184s] 'build/scripts-3.11' does not exist -- can't clean it
+[  184s] find . -name \*.pyc -exec rm {} \;
+[  184s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/deb_dist/tablib-0.13.0'
+[  184s]    dh_clean -O--buildsystem=python_distutils
+[  185s] dh_clean: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  185s]  dpkg-source -b .
+[  186s] dpkg-source: info: using options from tablib-0.13.0/debian/source/options: --extend-diff-ignore=\.egg-info$
+[  186s] dpkg-source: info: using source format '3.0 (quilt)'
+[  186s] dpkg-source: info: building tablib using existing ./tablib_0.13.0.orig.tar.gz
+[  186s] dpkg-source: info: building tablib in tablib_0.13.0-1.debian.tar.xz
+[  186s] dpkg-source: info: building tablib in tablib_0.13.0-1.dsc
+[  186s]  dpkg-genbuildinfo --build=source -O../tablib_0.13.0-1_source.buildinfo
+[  187s] Use of uninitialized value $value in pattern match (m//) at /usr/lib/perl5/vendor_perl/5.38.2/Dpkg/Control/HashCore.pm line 382.
+[  187s]  dpkg-genchanges -sa --build=source -O../tablib_0.13.0-1_source.changes
+[  188s] Use of uninitialized value $vendor in lc at /usr/lib/perl5/vendor_perl/5.38.2/Dpkg/Substvars.pm line 278.
+[  188s] dpkg-genchanges: info: including full source code in upload
+[  188s]  dpkg-source --after-build .
+[  189s] dpkg-source: info: using options from tablib-0.13.0/debian/source/options: --extend-diff-ignore=\.egg-info$
+[  189s] dpkg-buildpackage: info: source-only upload (original source is included)
+[  189s] dpkg-source: warning: extracting unsigned source package (tablib_0.13.0-1.dsc)
+[  190s] dpkg-source: info: extracting tablib in tablib-0.13.0
+[  190s] dpkg-source: info: unpacking tablib_0.13.0.orig.tar.gz
+[  190s] dpkg-source: info: unpacking tablib_0.13.0-1.debian.tar.xz
+[  190s] running bdist_deb
+[  191s] dpkg-buildpackage: info: source package tablib
+[  191s] dpkg-buildpackage: info: source version 0.13.0-1
+[  191s] dpkg-buildpackage: info: source distribution unstable
+[  191s] dpkg-buildpackage: info: source changed by None <None>
+[  191s]  dpkg-source --before-build .
+[  191s] dpkg-buildpackage: info: host architecture riscv64
+[  192s] dpkg-source: info: using options from tablib-0.13.0/debian/source/options: --extend-diff-ignore=\.egg-info$
+[  192s]  fakeroot debian/rules clean
+[  192s] dh clean --buildsystem=python_distutils
+[  193s] dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  193s]    debian/rules override_dh_auto_clean
+[  193s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/deb_dist/tablib-0.13.0'
+[  193s] python3 setup.py clean -a
+[  194s] running clean
+[  194s] 'build/lib' does not exist -- can't clean it
+[  194s] 'build/bdist.linux-riscv64' does not exist -- can't clean it
+[  194s] 'build/scripts-3.11' does not exist -- can't clean it
+[  194s] find . -name \*.pyc -exec rm {} \;
+[  194s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/deb_dist/tablib-0.13.0'
+[  194s]    dh_clean -O--buildsystem=python_distutils
+[  195s] dh_clean: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  195s]  debian/rules build
+[  195s] dh build --buildsystem=python_distutils
+[  195s] dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  196s]    dh_update_autotools_config -O--buildsystem=python_distutils
+[  196s]    dh_auto_configure -O--buildsystem=python_distutils
+[  197s] dh_auto_configure: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  197s] dh_auto_configure: warning: Please use the third-party "pybuild" build system instead of python-distutils
+[  197s] dh_auto_configure: warning: This feature will be removed in compat 12.
+[  197s]    debian/rules override_dh_auto_build
+[  197s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/deb_dist/tablib-0.13.0'
+[  197s] python3 setup.py build --force
+[  198s] running build
+[  198s] running build_py
+[  198s] creating build
+[  198s] creating build/lib
+[  198s] creating build/lib/tablib
+[  198s] copying tablib/__init__.py -> build/lib/tablib
+[  198s] copying tablib/compat.py -> build/lib/tablib
+[  198s] copying tablib/core.py -> build/lib/tablib
+[  198s] creating build/lib/tablib/formats
+[  198s] copying tablib/formats/__init__.py -> build/lib/tablib/formats
+[  198s] copying tablib/formats/_csv.py -> build/lib/tablib/formats
+[  198s] copying tablib/formats/_dbf.py -> build/lib/tablib/formats
+[  198s] copying tablib/formats/_df.py -> build/lib/tablib/formats
+[  198s] copying tablib/formats/_html.py -> build/lib/tablib/formats
+[  198s] copying tablib/formats/_jira.py -> build/lib/tablib/formats
+[  198s] copying tablib/formats/_json.py -> build/lib/tablib/formats
+[  198s] copying tablib/formats/_latex.py -> build/lib/tablib/formats
+[  198s] copying tablib/formats/_ods.py -> build/lib/tablib/formats
+[  198s] copying tablib/formats/_rst.py -> build/lib/tablib/formats
+[  198s] copying tablib/formats/_tsv.py -> build/lib/tablib/formats
+[  198s] copying tablib/formats/_xls.py -> build/lib/tablib/formats
+[  198s] copying tablib/formats/_xlsx.py -> build/lib/tablib/formats
+[  198s] copying tablib/formats/_yaml.py -> build/lib/tablib/formats
+[  198s] creating build/lib/tablib/packages
+[  198s] copying tablib/packages/__init__.py -> build/lib/tablib/packages
+[  198s] copying tablib/packages/markup.py -> build/lib/tablib/packages
+[  198s] copying tablib/packages/markup3.py -> build/lib/tablib/packages
+[  198s] copying tablib/packages/statistics.py -> build/lib/tablib/packages
+[  198s] creating build/lib/tablib/packages/dbfpy
+[  198s] copying tablib/packages/dbfpy/__init__.py -> build/lib/tablib/packages/dbfpy
+[  198s] copying tablib/packages/dbfpy/dbf.py -> build/lib/tablib/packages/dbfpy
+[  198s] copying tablib/packages/dbfpy/dbfnew.py -> build/lib/tablib/packages/dbfpy
+[  198s] copying tablib/packages/dbfpy/fields.py -> build/lib/tablib/packages/dbfpy
+[  198s] copying tablib/packages/dbfpy/header.py -> build/lib/tablib/packages/dbfpy
+[  198s] copying tablib/packages/dbfpy/record.py -> build/lib/tablib/packages/dbfpy
+[  198s] copying tablib/packages/dbfpy/utils.py -> build/lib/tablib/packages/dbfpy
+[  198s] creating build/lib/tablib/packages/dbfpy3
+[  198s] copying tablib/packages/dbfpy3/__init__.py -> build/lib/tablib/packages/dbfpy3
+[  198s] copying tablib/packages/dbfpy3/dbf.py -> build/lib/tablib/packages/dbfpy3
+[  198s] copying tablib/packages/dbfpy3/dbfnew.py -> build/lib/tablib/packages/dbfpy3
+[  198s] copying tablib/packages/dbfpy3/fields.py -> build/lib/tablib/packages/dbfpy3
+[  198s] copying tablib/packages/dbfpy3/header.py -> build/lib/tablib/packages/dbfpy3
+[  198s] copying tablib/packages/dbfpy3/record.py -> build/lib/tablib/packages/dbfpy3
+[  198s] copying tablib/packages/dbfpy3/utils.py -> build/lib/tablib/packages/dbfpy3
+[  198s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/deb_dist/tablib-0.13.0'
+[  198s]    dh_auto_test -O--buildsystem=python_distutils
+[  198s] dh_auto_test: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  198s]  fakeroot debian/rules binary
+[  199s] dh binary --buildsystem=python_distutils
+[  199s] dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  199s]    dh_auto_test -O--buildsystem=python_distutils
+[  200s] dh_auto_test: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  200s]    dh_testroot -O--buildsystem=python_distutils
+[  200s]    dh_prep -O--buildsystem=python_distutils
+[  200s]    debian/rules override_dh_auto_install
+[  201s] make[1]: Entering directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/deb_dist/tablib-0.13.0'
+[  201s] python3 setup.py install --force --root=debian/python3-tablib --no-compile -O0  
+[  202s] running install
+[  202s] /usr/lib/python3.11/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[  202s] !!
+[  202s] 
+[  202s]         ********************************************************************************
+[  202s]         Please avoid running ``setup.py`` directly.
+[  202s]         Instead, use pypa/build, pypa/installer or other
+[  202s]         standards-based tools.
+[  202s] 
+[  202s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[  202s]         ********************************************************************************
+[  202s] 
+[  202s] !!
+[  202s]   self.initialize_options()
+[  202s] running build
+[  202s] running build_py
+[  202s] running install_lib
+[  202s] creating debian/python3-tablib
+[  202s] creating debian/python3-tablib/usr
+[  202s] creating debian/python3-tablib/usr/lib
+[  202s] creating debian/python3-tablib/usr/lib/python3.11
+[  202s] creating debian/python3-tablib/usr/lib/python3.11/site-packages
+[  202s] creating debian/python3-tablib/usr/lib/python3.11/site-packages/tablib
+[  202s] copying build/lib/tablib/__init__.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib
+[  202s] copying build/lib/tablib/compat.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib
+[  202s] copying build/lib/tablib/core.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib
+[  202s] creating debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  202s] copying build/lib/tablib/formats/__init__.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  202s] copying build/lib/tablib/formats/_csv.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  202s] copying build/lib/tablib/formats/_dbf.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  202s] copying build/lib/tablib/formats/_df.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  202s] copying build/lib/tablib/formats/_html.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  202s] copying build/lib/tablib/formats/_jira.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  202s] copying build/lib/tablib/formats/_json.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  202s] copying build/lib/tablib/formats/_latex.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  202s] copying build/lib/tablib/formats/_ods.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  202s] copying build/lib/tablib/formats/_rst.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  202s] copying build/lib/tablib/formats/_tsv.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  202s] copying build/lib/tablib/formats/_xls.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  202s] copying build/lib/tablib/formats/_xlsx.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  202s] copying build/lib/tablib/formats/_yaml.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/formats
+[  202s] creating debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages
+[  202s] copying build/lib/tablib/packages/__init__.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages
+[  202s] copying build/lib/tablib/packages/markup.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages
+[  202s] copying build/lib/tablib/packages/markup3.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages
+[  202s] copying build/lib/tablib/packages/statistics.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages
+[  202s] creating debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  202s] copying build/lib/tablib/packages/dbfpy/__init__.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  202s] copying build/lib/tablib/packages/dbfpy/dbf.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  202s] copying build/lib/tablib/packages/dbfpy/dbfnew.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  202s] copying build/lib/tablib/packages/dbfpy/fields.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  202s] copying build/lib/tablib/packages/dbfpy/header.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  202s] copying build/lib/tablib/packages/dbfpy/record.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  202s] copying build/lib/tablib/packages/dbfpy/utils.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy
+[  202s] creating debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  202s] copying build/lib/tablib/packages/dbfpy3/__init__.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  202s] copying build/lib/tablib/packages/dbfpy3/dbf.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  202s] copying build/lib/tablib/packages/dbfpy3/dbfnew.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  202s] copying build/lib/tablib/packages/dbfpy3/fields.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  202s] copying build/lib/tablib/packages/dbfpy3/header.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  202s] copying build/lib/tablib/packages/dbfpy3/record.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  202s] copying build/lib/tablib/packages/dbfpy3/utils.py -> debian/python3-tablib/usr/lib/python3.11/site-packages/tablib/packages/dbfpy3
+[  202s] running install_egg_info
+[  202s] running egg_info
+[  202s] writing tablib.egg-info/PKG-INFO
+[  202s] writing dependency_links to tablib.egg-info/dependency_links.txt
+[  202s] writing requirements to tablib.egg-info/requires.txt
+[  202s] writing top-level names to tablib.egg-info/top_level.txt
+[  202s] reading manifest file 'tablib.egg-info/SOURCES.txt'
+[  202s] reading manifest template 'MANIFEST.in'
+[  202s] adding license file 'LICENSE'
+[  202s] adding license file 'NOTICE'
+[  202s] adding license file 'AUTHORS'
+[  202s] writing manifest file 'tablib.egg-info/SOURCES.txt'
+[  202s] Copying tablib.egg-info to debian/python3-tablib/usr/lib/python3.11/site-packages/tablib-0.13.0-py3.11.egg-info
+[  202s] running install_scripts
+[  202s] make[1]: Leaving directory '/home/abuild/rpmbuild/BUILD/stdeb-0.10.0/deb_dist/tablib-0.13.0'
+[  202s]    dh_installdocs -O--buildsystem=python_distutils
+[  203s] dh_installdocs: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  203s]    dh_installchangelogs -O--buildsystem=python_distutils
+[  203s] dh_installchangelogs: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  203s]    dh_installinit -O--buildsystem=python_distutils
+[  204s] dh_installinit: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  204s]    dh_perl -O--buildsystem=python_distutils
+[  204s]    dh_link -O--buildsystem=python_distutils
+[  205s]    dh_strip_nondeterminism -O--buildsystem=python_distutils
+[  209s]    dh_compress -O--buildsystem=python_distutils
+[  210s] dh_compress: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  210s]    dh_fixperms -O--buildsystem=python_distutils
+[  211s]    dh_missing -O--buildsystem=python_distutils
+[  212s] dh_missing: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  212s]    dh_installdeb -O--buildsystem=python_distutils
+[  212s] dh_installdeb: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+[  212s]    dh_gencontrol -O--buildsystem=python_distutils
+[  213s] Use of uninitialized value $vendor in lc at /usr/lib/perl5/vendor_perl/5.38.2/Dpkg/Substvars.pm line 278.
+[  213s] dpkg-gencontrol: warning: Depends field of package python3-tablib: substitution variable ${python3:Depends} used, but is not defined
+[  213s]    dh_md5sums -O--buildsystem=python_distutils
+[  214s]    dh_builddeb -O--buildsystem=python_distutils
+[  215s] dpkg-deb: building package 'python3-tablib' in '../python3-tablib_0.13.0-1_all.deb'.
+[  215s]  dpkg-genbuildinfo --build=binary -O../tablib_0.13.0-1_riscv64.buildinfo
+[  216s] Use of uninitialized value $value in pattern match (m//) at /usr/lib/perl5/vendor_perl/5.38.2/Dpkg/Control/HashCore.pm line 382.
+[  216s]  dpkg-genchanges --build=binary -O../tablib_0.13.0-1_riscv64.changes
+[  216s] Use of uninitialized value $vendor in lc at /usr/lib/perl5/vendor_perl/5.38.2/Dpkg/Substvars.pm line 278.
+[  217s] dpkg-genchanges: info: binary-only upload (no source code included)
+[  217s]  dpkg-source --after-build .
+[  217s] dpkg-source: info: using options from tablib-0.13.0/debian/source/options: --extend-diff-ignore=\.egg-info$
+[  217s] dpkg-buildpackage: info: binary-only upload (no source included)
+[  218s] + for DEBFILE in deb_dist/*.deb
+[  218s] + echo 'contents of deb_dist/python3-tablib_0.13.0-1_all.deb from tablib-0.13.0.tar.gz in case 3:'
+[  218s] contents of deb_dist/python3-tablib_0.13.0-1_all.deb from tablib-0.13.0.tar.gz in case 3:
+[  218s] + dpkg --contents deb_dist/python3-tablib_0.13.0-1_all.deb
+[  218s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./
+[  218s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/
+[  218s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/
+[  218s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/
+[  218s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/
+[  218s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib/
+[  218s] -rw-r--r-- root/root       186 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/__init__.py
+[  218s] -rw-r--r-- root/root       771 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/compat.py
+[  218s] -rw-r--r-- root/root     34749 2019-03-08 12:16 ./usr/lib/python3.11/site-packages/tablib/core.py
+[  218s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib/formats/
+[  218s] -rw-r--r-- root/root       486 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/__init__.py
+[  218s] -rw-r--r-- root/root      1112 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_csv.py
+[  218s] -rw-r--r-- root/root      2661 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_dbf.py
+[  218s] -rw-r--r-- root/root      1040 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_df.py
+[  218s] -rw-r--r-- root/root      1641 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_html.py
+[  218s] -rw-r--r-- root/root       961 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_jira.py
+[  218s] -rw-r--r-- root/root      1260 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_json.py
+[  218s] -rw-r--r-- root/root      3708 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_latex.py
+[  218s] -rw-r--r-- root/root      2958 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_ods.py
+[  218s] -rw-r--r-- root/root      8168 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_rst.py
+[  218s] -rw-r--r-- root/root       761 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_tsv.py
+[  218s] -rw-r--r-- root/root      3307 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_xls.py
+[  218s] -rw-r--r-- root/root      3967 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_xlsx.py
+[  218s] -rw-r--r-- root/root      1181 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/formats/_yaml.py
+[  218s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib/packages/
+[  218s] -rw-r--r-- root/root         0 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/__init__.py
+[  218s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/
+[  218s] -rw-r--r-- root/root         0 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/__init__.py
+[  218s] -rw-r--r-- root/root      9234 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/dbf.py
+[  218s] -rw-r--r-- root/root      5458 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/dbfnew.py
+[  218s] -rw-r--r-- root/root     14524 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/fields.py
+[  218s] -rw-r--r-- root/root      9388 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/header.py
+[  218s] -rw-r--r-- root/root      8447 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/record.py
+[  218s] -rw-r--r-- root/root      4914 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy/utils.py
+[  218s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/
+[  218s] -rw-r--r-- root/root         0 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/__init__.py
+[  218s] -rw-r--r-- root/root      9266 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/dbf.py
+[  218s] -rw-r--r-- root/root      5264 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/dbfnew.py
+[  218s] -rw-r--r-- root/root     14552 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/fields.py
+[  218s] -rw-r--r-- root/root      9247 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/header.py
+[  218s] -rw-r--r-- root/root      8545 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/record.py
+[  218s] -rw-r--r-- root/root      4885 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/dbfpy3/utils.py
+[  218s] -rw-r--r-- root/root     18911 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/markup.py
+[  218s] -rw-r--r-- root/root     19021 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/markup3.py
+[  218s] -rw-r--r-- root/root       540 2019-03-08 12:15 ./usr/lib/python3.11/site-packages/tablib/packages/statistics.py
+[  218s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib-0.13.0-py3.11.egg-info/
+[  218s] -rw-r--r-- root/root      9585 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib-0.13.0-py3.11.egg-info/PKG-INFO
+[  218s] -rw-r--r-- root/root      1185 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib-0.13.0-py3.11.egg-info/SOURCES.txt
+[  218s] -rw-r--r-- root/root         1 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib-0.13.0-py3.11.egg-info/dependency_links.txt
+[  218s] -rw-r--r-- root/root        70 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib-0.13.0-py3.11.egg-info/requires.txt
+[  218s] -rw-r--r-- root/root         7 2022-04-24 02:49 ./usr/lib/python3.11/site-packages/tablib-0.13.0-py3.11.egg-info/top_level.txt
+[  218s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/share/
+[  218s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/share/doc/
+[  218s] drwxr-xr-x root/root         0 2022-04-24 02:49 ./usr/share/doc/python3-tablib/
+[  218s] -rw-r--r-- root/root       149 2022-04-24 02:49 ./usr/share/doc/python3-tablib/changelog.Debian.gz
+[  218s] -rw-r--r-- root/root      1963 2019-03-08 12:15 ./usr/share/doc/python3-tablib/changelog.gz
+[  218s] ++ stat -c %s deb_dist/tablib_0.13.0-1.debian.tar.xz
+[  218s] + DEB_SPECIFIC_SIZE=1112
+[  218s] + (( 1112>5000 ))
+[  218s] + echo 'tablib case 3: deb_specific size 1112'
+[  218s] tablib case 3: deb_specific size 1112
+[  218s] + rm -rf deb_dist
+[  218s] + echo 'All tests passed.'
+[  218s] All tests passed.
+[  218s] ++ '[' -f _current_flavor ']'
+[  218s] ++ cat _current_flavor
+[  218s] + last_flavor=python310
+[  218s] + '[' -z python310 ']'
+[  218s] + '[' python310 '!=' python312 ']'
+[  218s] + '[' -d build ']'
+[  218s] + mv build _build.python310
+[  218s] + '[' -d _build.python312 ']'
+[  218s] + mv _build.python312 build
+[  218s] + echo python312
+[  218s] + python_flavor=python312
+[  218s] + export PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.12/site-packages
+[  218s] + PYTHONPATH=/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.12/site-packages
+[  218s] + cp test.sh.orig test.sh
+[  218s] + sed -i 's:\(_LOC=`which\s\+[-a-zA-Z0-9]\+\):\1-3.12:' test.sh
+[  218s] + PYEXE=python3.12
+[  218s] + bash -x ./test.sh
+[  218s] + set -e
+[  218s] + rm -rf deb_dist
+[  218s] + '[' python3.12 == '' ']'
+[  218s] + echo 'using Python at python3.12'
+[  218s] using Python at python3.12
+[  218s] ++ which py2dsc-3.12
+[  218s] + PY2DSC_LOC=/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-3.12
+[  218s] ++ which py2dsc-deb-3.12
+[  218s] + PY2DSC_DEB_LOC=/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb-3.12
+[  218s] ++ which pypi-download-3.12
+[  218s] + PYPI_DOWNLOAD_LOC=/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-download-3.12
+[  218s] ++ which pypi-install-3.12
+[  218s] + PYPI_INSTALL_LOC=/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-install-3.12
+[  218s] + PY2DSC='python3.12 /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-3.12'
+[  218s] + PY2DSC_DEB='python3.12 /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-deb-3.12'
+[  218s] + PYPI_DOWNLOAD='python3.12 /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-download-3.12'
+[  218s] + PYPI_INSTALL='python3.12 /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/pypi-install-3.12'
+[  218s] + python3.12 /home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-3.12 --help
+[  219s] Traceback (most recent call last):
+[  219s]   File "/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.12/site-packages/stdeb/cli_runner.py", line 8, in <module>
+[  219s]     from ConfigParser import SafeConfigParser  # noqa: F401
+[  219s]     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[  219s] ModuleNotFoundError: No module named 'ConfigParser'
+[  219s] 
+[  219s] During handling of the above exception, another exception occurred:
+[  219s] 
+[  219s] Traceback (most recent call last):
+[  219s]   File "/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/bin/py2dsc-3.12", line 3, in <module>
+[  219s]     import stdeb.cli_runner
+[  219s]   File "/home/abuild/rpmbuild/BUILDROOT/python-stdeb-0.10.0-1.6.riscv64/usr/lib/python3.12/site-packages/stdeb/cli_runner.py", line 11, in <module>
+[  219s]     from configparser import SafeConfigParser  # noqa: F401
+[  219s]     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[  219s] ImportError: cannot import name 'SafeConfigParser' from 'configparser' (/usr/lib64/python3.12/configparser.py). Did you mean: 'RawConfigParser'?
+[  219s] error: Bad exit status from /var/tmp/rpm-tmp.ZdIqF5 (%check)
+[  219s] 
+[  219s] RPM build errors:
+[  219s]     Bad exit status from /var/tmp/rpm-tmp.ZdIqF5 (%check)
+[  219s] ### VM INTERACTION START ###
+[  219s] [  214.467248][    T1] sysrq: Power Off
+[  219s] [  214.467811][   T10] reboot: Power down
+[  219s] ### VM INTERACTION END ###
+[  219s] 
+[  219s] i04-ch1c failed "build python-stdeb.spec" at Sat Mar 30 09:59:13 UTC 2024.
+[  219s] 
